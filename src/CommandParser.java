@@ -1,11 +1,11 @@
 import java.util.Map;
 
 public class CommandParser {
-    public void parse(String input, Player player, Map<String, Room> rooms) {
+    public boolean parse(String input, Player player, Map<String, Room> rooms) {
         String[] words = input.trim().toLowerCase().split("\\s+");
         if (words.length == 0) {
             System.out.println("Please enter a command.");
-            return;
+            return false;
         }
 
         String command = words[0];
@@ -28,11 +28,11 @@ public class CommandParser {
                         System.out.println("You can't go that way.");
                     }
                 }
-                break;
+                return false;
             case "look":
                 Room currentRoom = rooms.get(player.getCurrentRoomId());
                 System.out.println(currentRoom.getLongDescription());
-                break;
+                return false;
             case "inventory":
                 if (player.getInventory().isEmpty()) {
                     System.out.println("Your inventory is empty.");
@@ -42,7 +42,7 @@ public class CommandParser {
                         System.out.println("- " + item.getName());
                     }
                 }
-                break;
+                return false;
             case "take":
                 if (words.length < 2) {
                     System.out.println("Take what?");
@@ -64,7 +64,7 @@ public class CommandParser {
                         System.out.println("There is no " + itemName + " here.");
                     }
                 }
-                break;
+                return false;
             case "drop":
                 if (words.length < 2) {
                     System.out.println("Drop what?");
@@ -86,13 +86,16 @@ public class CommandParser {
                         System.out.println("You don't have a " + itemName + ".");
                     }
                 }
-                break;
+                return false;
             case "help":
                 System.out.println("Available commands: go [direction], look, take [item], drop [item], inventory, help");
-                break;
+                return false;
+            case "quit":
+                System.out.println("good game");
+                return true;
             default:
                 System.out.println("I don't understand that command.");
-                break;
+                return false;
         }
     }
 }
