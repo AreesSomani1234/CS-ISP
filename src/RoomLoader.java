@@ -33,6 +33,13 @@ public class RoomLoader {
                 }
 
                 Room room = new Room(roomId, name, description, exits, items);
+                JsonObject npcObj = roomData.getAsJsonObject("npc");
+                if (npcObj != null) {
+                    String npcName = npcObj.get("name").getAsString();
+                    boolean npcFriendly = Boolean.parseBoolean(npcObj.get("friendly").getAsString());
+                    NPC npc = new NPC(npcName, npcFriendly);
+                    room.setNPC(npc);
+                }
                 rooms.put(roomId, room);
             }
         } catch (Exception e) {

@@ -11,7 +11,11 @@
           "name": "Key",
           "description": "A small rusty key."
         }
-      ]
+      ],
+      "npc":{
+        "name": "Steve",
+        "friendly":"true"
+      }
     },
     "library": {
       "name": "Library",

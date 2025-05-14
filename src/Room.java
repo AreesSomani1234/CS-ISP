@@ -7,6 +7,8 @@ public class Room {
     private String description;
     private Map<String, String> exits; // direction → roomId
     private List<Item> items;
+    private NPC npc;
+
 
     public Room(String id, String name, String description, Map<String, String> exits, List<Item> items) {
         this.id = id;
@@ -42,6 +44,9 @@ public class Room {
 
     public void addItem(Item item) {
         items.add(item);
+    }
+    public void setNPC(NPC npc) {
+        this.npc = npc;
     }
 
     public String getLongDescription() {
