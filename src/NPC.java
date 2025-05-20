@@ -4,6 +4,7 @@ public class NPC {
     private boolean friendly;
     private String description;
     private String size;
+    private int Attackpower;
 
     public NPC(String name, boolean friendly, String description, String size){
         this.name = name;
@@ -12,12 +13,15 @@ public class NPC {
         this.size = size;
         if(size == "big"){
             health = (int) ((Math.random()* 26)+75);
+            Attackpower = (int) ((Math.random()* 26)+25);
         }
         if(size == "medium"){
             health = (int) ((Math.random()* 35)+40);
+            Attackpower = (int) ((Math.random()* 11)+10);
         }
         if(size == "small"){
             health = (int) ((Math.random()* 30)+10);
+            Attackpower = (int) ((Math.random()* 10)+1);
         }
     }
 
@@ -35,5 +39,8 @@ public class NPC {
     }
     public String getSize(){
         return size;
+    }
+    public int getAttackPower(){
+        return Attackpower;
     }
 }
