@@ -37,7 +37,9 @@ public class RoomLoader {
                 if (npcObj != null) {
                     String npcName = npcObj.get("name").getAsString();
                     boolean npcFriendly = Boolean.parseBoolean(npcObj.get("friendly").getAsString());
-                    NPC npc = new NPC(npcName, npcFriendly);
+                    String npcdescription = npcObj.get("description").getAsString();
+                    String npcSize = npcObj.get("size").getAsString();
+                    NPC npc = new NPC(npcName, npcFriendly,npcdescription,npcSize);
                     room.setNPC(npc);
                 }
                 rooms.put(roomId, room);
