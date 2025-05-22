@@ -4,24 +4,28 @@ public class NPC {
     private boolean friendly;
     private String description;
     private String size;
-    private int Attackpower;
+    private int attackPower;
 
     public NPC(String name, boolean friendly, String description, String size){
         this.name = name;
         this.friendly = friendly;
-        this.description = description;
+        this.description = description; //description about general behavior
         this.size = size;
-        if(size == "big"){
+        if(size.equals("big")){
             health = (int) ((Math.random()* 26)+75);
-            Attackpower = (int) ((Math.random()* 26)+25);
+            attackPower = (int) ((Math.random()* 26)+25);
         }
-        if(size == "medium"){
+        else if(size.equals("medium")){
             health = (int) ((Math.random()* 35)+40);
-            Attackpower = (int) ((Math.random()* 11)+10);
+            attackPower = (int) ((Math.random()* 11)+10);
         }
-        if(size == "small"){
+        else if(size.equals("small")){
             health = (int) ((Math.random()* 30)+10);
-            Attackpower = (int) ((Math.random()* 10)+1);
+            attackPower = (int) ((Math.random()* 10)+1);
+        }
+        else //Buffer if non valid input
+        { 
+            System.out.println("non valid input");
         }
     }
 
@@ -40,7 +44,7 @@ public class NPC {
     public String getSize(){
         return size;
     }
-    public int getAttackPower(){
-        return Attackpower;
+    public int getattackPower(){
+        return attackPower;
     }
 }
