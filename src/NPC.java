@@ -8,28 +8,25 @@ public class NPC {
 
     public NPC(String name, boolean friendly, String description, String size){
         this.name = name;
-        this.friendly = friendly; //Hostility
-        this.description = description; //Description about the general behavior of the enemy
+        this.friendly = friendly;
+        this.description = description; //description about general behavior
         this.size = size;
-        switch (size)
-        {
-            case "big" -> {
-                health = (int) ((Math.random() * 26) + 75);
-                attackPower = (int) ((Math.random() * 26) + 25);
-            }
-            case "medium" -> {
-                health = (int) ((Math.random() * 35) + 40);
-                attackPower = (int) ((Math.random() * 11) + 10);
-            }
-            case "small" -> {
-                health = (int) ((Math.random() * 30) + 10);
-                attackPower = (int) ((Math.random() * 10) + 1);
-            }
-            default -> {
-                System.out.println("non valid input");
-            }
+        if(size.equals("big")){
+            health = (int) ((Math.random()* 26)+75);
+            attackPower = (int) ((Math.random()* 26)+25);
         }
-
+        else if(size.equals("medium")){
+            health = (int) ((Math.random()* 35)+40);
+            attackPower = (int) ((Math.random()* 11)+10);
+        }
+        else if(size.equals("small")){
+            health = (int) ((Math.random()* 30)+10);
+            attackPower = (int) ((Math.random()* 10)+1);
+        }
+        else //Buffer if non valid input
+        { 
+            System.out.println("non valid input");
+        }
     }
 
     public String getNPCname(){
