@@ -25,6 +25,18 @@ public class Item {
             strength = 0;
         }
     }
+    public void useItem (Player player){
+        if(consumable){
+            player.updatePlayerHealth(health);
+        }
+        else if(weapon){
+            player.updatePlayerStrength(strength);
+        }
+        else{
+
+        }
+    }
+
     public boolean getConsumable(){
         return consumable;
     }
@@ -37,8 +49,6 @@ public class Item {
     public int getStrength(){
         return strength;
     }
-    
-
     public String getId() {
         return id;
     }
