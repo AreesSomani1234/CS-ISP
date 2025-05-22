@@ -29,7 +29,10 @@ public class RoomLoader {
                     String itemId = itemObj.get("id").getAsString();
                     String itemName = itemObj.get("name").getAsString();
                     String itemDescription = itemObj.get("description").getAsString();
-                    items.add(new Item(itemId, itemName, itemDescription));
+                    boolean isConsumable = itemObj.get("consumable").getAsBoolean();
+
+                    boolean isWeapon = itemObj.get("weapon").getAsBoolean();
+                    items.add(new Item(itemId, itemName, itemDescription, isConsumable,isWeapon));
                 }
 
                 Room room = new Room(roomId, name, description, exits, items);

@@ -4,12 +4,17 @@ import java.util.List;
 public class Player {
     private String currentRoomId;
     private List<Item> inventory;
+    private int playerHealth;
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
         this.inventory = new ArrayList<>();
+        this.playerHealth = 100;
     }
 
+    public int getPlayerHealth(){
+        return playerHealth;
+    }
     public String getCurrentRoomId() {
         return currentRoomId;
     }
@@ -28,5 +33,9 @@ public class Player {
 
     public List<Item> getInventory() {
         return inventory;
+    }
+
+    public void updatePlayerHealth(int healthUpdate){
+        playerHealth += healthUpdate;
     }
 }
