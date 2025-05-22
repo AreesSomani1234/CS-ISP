@@ -1,10 +1,19 @@
 {
-    "entrance": {
-      "name": "Entrance Hall",
-      "description": "You are in a grand entrance hall. A door leads north.",
+    "Finch Station": {
+      "name": "Finch Station",
+      "description": "You are starting at Finch Station.",
       "exits": {
-        "north": "library"
+        "south": "Sheppard Yonge"
       },
+      
+      
+     "Sheppard Yonge":{
+        "name": "Sheppard Yonge",
+         "description": "You are now at Sheppard Yonge, if you want to exit left go east. If you want to exit south, you go to York Mills station"
+     }, 
+      
+      
+      
       "items": [
         {
           "id": "key1",
