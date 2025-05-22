@@ -6,7 +6,6 @@ public class Player {
     private List<Item> inventory;
     private int playerHealth;
     private int playerStrength;
-    final private int playerMaxHealth = 100;
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
@@ -44,10 +43,6 @@ public class Player {
     }
     public void updatePlayerStrength(int strengthUpdate){
         playerStrength += strengthUpdate;
-        
-        if(playerHealth >= playerMaxHealth)
-        {
-            playerHealth = playerMaxHealth;
-        }
     }
 }
+
