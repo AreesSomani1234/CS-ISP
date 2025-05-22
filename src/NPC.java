@@ -11,7 +11,8 @@ public class NPC {
         this.friendly = friendly; //Hostility
         this.description = description; //Description about the general behavior of the enemy
         this.size = size;
-        switch (size) {
+        switch (size)
+        {
             case "big" -> {
                 health = (int) ((Math.random() * 26) + 75);
                 attackPower = (int) ((Math.random() * 26) + 25);
@@ -27,7 +28,7 @@ public class NPC {
             default -> {
                 System.out.println("non valid input");
             }
-}
+        }
 
     }
 
