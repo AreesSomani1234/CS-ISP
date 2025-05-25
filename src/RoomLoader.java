@@ -30,7 +30,6 @@ public class RoomLoader {
                     String itemName = itemObj.get("name").getAsString();
                     String itemDescription = itemObj.get("description").getAsString();
                     boolean isConsumable = itemObj.get("consumable").getAsBoolean();
-
                     boolean isWeapon = itemObj.get("weapon").getAsBoolean();
                     items.add(new Item(itemId, itemName, itemDescription, isConsumable,isWeapon));
                 }

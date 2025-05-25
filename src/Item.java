@@ -32,9 +32,6 @@ public class Item {
         else if(weapon){
             player.updatePlayerStrength(strength);
         }
-        else{
-
-        }
     }
 
     public boolean getConsumable(){
