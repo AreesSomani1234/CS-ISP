@@ -1,6 +1,6 @@
 import java.util.List;
 import java.util.Map;
-
+//talk to teacher
 public class Room {
     private String id;
     private String name;
@@ -8,14 +8,19 @@ public class Room {
     private Map<String, String> exits; // direction → roomId
     private List<Item> items;
     private NPC npc;
+    private RoomKey hasKey;    //makes sure room has a key in it
+    private boolean needsKey; // room needs key to go in
 
 
-    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items) {
+    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, NPC npc, RoomKey hasKey, boolean needsKey) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.exits = exits;
         this.items = items;
+        this.npc = npc;
+        this.hasKey = hasKey;
+        this.needsKey = needsKey;
     }
 
     public String getId() {
@@ -48,6 +53,7 @@ public class Room {
     public void setNPC(NPC npc) {
         this.npc = npc;
     }
+
 
     public String getLongDescription() {
         StringBuilder sb = new StringBuilder();
