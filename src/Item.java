@@ -17,7 +17,7 @@ public class Item {
             health = 50;
         }
         if(weapon){
-            strength = (int) (Math.random()*35)+1;
+            strength = 100;
             health = 0; 
         }
         if(!weapon && !consumable){
@@ -30,7 +30,7 @@ public class Item {
             player.updatePlayerHealth(health);
         }
         else if(weapon){
-            player.updatePlayerStrength(strength);
+            player.updatePlayerStrength(100);
         }
     }
 

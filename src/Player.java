@@ -12,7 +12,7 @@ public class Player {
         this.currentRoomId = startingRoomId;
         this.inventory = new ArrayList<>();
         this.playerHealth = 100;
-        this.playerStrength = 15;
+        this.playerStrength = 0;
     }
 
     public int getPlayerHealth(){
@@ -37,6 +37,9 @@ public class Player {
     public List<Item> getInventory() {
         return inventory;
     }
+    public void updatePlayerStrength(int val){
+        playerStrength += val;
+    }
 
     public void updatePlayerHealth(int healthUpdate){
         playerHealth += healthUpdate;
@@ -47,7 +50,12 @@ public class Player {
         
         System.out.println("Your health is: " + playerHealth);
     }
-    public void updatePlayerStrength(int strengthUpdate){
-        playerStrength += strengthUpdate;
+    public void PlayerAttack(NPC npc, Item item){
+        if(playerStrength > 0){
+            System.out.println("you are attacking the " + npc.getNPCname() + " with your weapon");
+            npc.NPCDeath();
+
+        }
     }
+
 }

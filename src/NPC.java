@@ -6,6 +6,7 @@ public class NPC {
     private String size;
     private int attackPower;
     private String RoomID;
+    private boolean living;
 
     public NPC(String name, boolean friendly, String description, String size, String RoomID){
         this.RoomID = RoomID;
@@ -13,6 +14,7 @@ public class NPC {
         this.friendly = friendly;
         this.description = description; //description about general behavior
         this.size = size;
+        living = true;
         if(size.equals("big")){
             health = (int) ((Math.random()* 26)+75);
             attackPower = (int) ((Math.random()* 26)-50);
@@ -53,11 +55,16 @@ public class NPC {
         return attackPower;
     }
     public void NPCAttack(Player player){
-        if(player.getCurrentRoomId().equals(getNPCRoomID())) {
+        if((player.getCurrentRoomId().equals(getNPCRoomID())) && living) {
             System.out.println("The " + getNPCname() + "is attacking you!" );
             player.updatePlayerHealth(getattackPower());
             System.out.println("You lost: " + getattackPower() + "health points");
             System.out.println("Your current health is: " + player.getPlayerHealth());
         }
     }
+    public void NPCDeath(){
+        living = false;
+        System.out.println(getNPCname() + " is dead!");
+    }
+    
 }
