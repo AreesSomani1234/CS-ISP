@@ -40,14 +40,14 @@ public class Player {
 
     public void updatePlayerHealth(int healthUpdate){
         playerHealth += healthUpdate;
-        System.out.println("Your health is: " + playerHealth);
-    }
-    public void updatePlayerStrength(int strengthUpdate){
-        playerStrength += strengthUpdate;
-        
         if(playerHealth >= playerMaxHealth)
         {
             playerHealth = playerMaxHealth;
         }
+        
+        System.out.println("Your health is: " + playerHealth);
+    }
+    public void updatePlayerStrength(int strengthUpdate){
+        playerStrength += strengthUpdate;
     }
 }

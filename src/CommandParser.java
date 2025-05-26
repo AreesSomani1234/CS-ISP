@@ -93,6 +93,39 @@ public class CommandParser {
             case "quit":
                 System.out.println("good game");
                 return true;
+
+case "use":
+    if (words.length < 2) {
+        System.out.println("Use what?");
+    } 
+    else {
+        String itemName = words[1];
+        Item itemToUse = null;
+        for (Item item : player.getInventory()) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                itemToUse = item;
+                break;
+            }
+        }
+        if (itemToUse != null) {
+            if (itemToUse.getConsumable()) {
+                System.out.println("You consume the " + itemToUse.getName() + ".");
+                itemToUse.useItem(player);
+                player.removeItem(itemToUse);
+            } else if (itemToUse.getWeapon()) {
+                System.out.println("You equip the " + itemToUse.getName() + ".");
+                System.out.println("Your strength increases by " + itemToUse.getStrength() + " points.");
+                itemToUse.useItem(player);
+            } else {
+                System.out.println("You can't use the " + itemToUse.getName() + " that way.");
+                System.out.println(itemToUse.getDescription());
+            }
+        } else {
+            System.out.println("You don't have " + itemName + ".");
+        }
+    }
+    return false;
+
             default:
                 System.out.println("I don't understand that command.");
                 return false;
