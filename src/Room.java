@@ -53,6 +53,10 @@ public class Room {
     public void setNPC(NPC npc) {
         this.npc = npc;
     }
+    public NPC getNPC()
+    {
+        return npc;
+    }
 
 
     public String getLongDescription() {

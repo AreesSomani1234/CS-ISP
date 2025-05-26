@@ -6,7 +6,11 @@ public class Player {
     private List<Item> inventory;
     private int playerHealth;
     private int playerStrength;
+    private int keyCount;
     final private int playerMaxHealth = 100;
+
+    private static final String ESCAPE_ROOM_ID = "escape";
+    private static final int REQUIRED_EXIT_KEYS = 3;
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
@@ -40,6 +44,15 @@ public class Player {
     public void updatePlayerStrength(int val){
         playerStrength += val;
     }
+    public void GivePlayerKey()
+    {
+        System.out.println("You got a key");
+        keyCount ++;
+    }
+    public int GetKeyCount()
+    {
+        return keyCount;
+    }
 
     public void updatePlayerHealth(int healthUpdate){
         playerHealth += healthUpdate;
@@ -56,6 +69,19 @@ public class Player {
             npc.NPCDeath();
 
         }
+    }
+
+    public boolean CheckWin(Room currentRoom, NPC guardian) {
+        if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
+            return false;
+        }
+        if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian")) {
+            return false;
+        }
+        if (keyCount == REQUIRED_EXIT_KEYS) {
+            return true;
+        }
+        return false;
     }
 
 }

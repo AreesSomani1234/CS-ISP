@@ -1,3 +1,4 @@
+
 public class NPC {
     private String name;
     private int health;
@@ -15,21 +16,24 @@ public class NPC {
         this.description = description; //description about general behavior
         this.size = size;
         living = true;
-        if(size.equals("big")){
-            health = (int) ((Math.random()* 26)+75);
-            attackPower = (int) ((Math.random()* 26)-50);
-        }
-        else if(size.equals("medium")){
-            health = (int) ((Math.random()* 35)+40);
-            attackPower = (int) ((Math.random()* 11)-20);
-        }
-        else if(size.equals("small")){
-            health = (int) ((Math.random()* 30)+10);
-            attackPower = (int) ((Math.random()* 10)-11);
-        }
-        else //Buffer if non valid input
-        { 
-            System.out.println("non valid input");
+        if (!friendly) //because friendly don't attack
+        {
+            if(size.equals("big")){
+                health = (int) ((Math.random()* 26)+75);
+                attackPower = (int) ((Math.random()* 26)-50);
+            }
+            else if(size.equals("medium")){
+                health = (int) ((Math.random()* 35)+40);
+                attackPower = (int) ((Math.random()* 11)-20);
+            }
+            else if(size.equals("small")){
+                health = (int) ((Math.random()* 30)+10);
+                attackPower = (int) ((Math.random()* 10)-11);
+            }
+            else //Buffer if non valid input
+            { 
+                System.out.println("non valid input");
+            }
         }
     }
     public String getNPCRoomID(){
@@ -66,5 +70,4 @@ public class NPC {
         living = false;
         System.out.println(getNPCname() + " is dead!");
     }
-    
 }
