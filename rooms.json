@@ -172,7 +172,7 @@
       
       
       
-      "items": {
+      "items": [
         {
           "id": "key1",
           "name": "Key",
@@ -182,6 +182,7 @@
           "isKey": true,
           "keyType": 1
         }
+      ]
     },
       "npc":{
         "name": "Steve",
