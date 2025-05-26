@@ -31,17 +31,23 @@ public class RoomLoader {
                     String itemDescription = itemObj.get("description").getAsString();
                     boolean isConsumable = itemObj.get("consumable").getAsBoolean();
                     boolean isWeapon = itemObj.get("weapon").getAsBoolean();
-                    items.add(new Item(itemId, itemName, itemDescription, isConsumable,isWeapon));
+                    boolean isKey = itemObj.get("isKey").getAsBoolean();
+                    if (isKey) {
+                        int keyType = itemObj.get("keyType").getAsInt();
+                        items.add(new RoomKey(itemId, itemName, itemDescription, keyType));
+                    } else {
+                        items.add(new Item(itemId, itemName, itemDescription, isConsumable, isWeapon));
+                    }
                 }
 
-                Room room = new Room(roomId, name, description, exits, items);
+                Room room = new Room(roomId, name, description, exits, items, null, false);
                 JsonObject npcObj = roomData.getAsJsonObject("npc");
                 if (npcObj != null) {
                     String npcName = npcObj.get("name").getAsString();
                     boolean npcFriendly = Boolean.parseBoolean(npcObj.get("friendly").getAsString());
                     String npcdescription = npcObj.get("description").getAsString();
                     String npcSize = npcObj.get("size").getAsString();
-                    NPC npc = new NPC(npcName, npcFriendly,npcdescription,npcSize);
+                    NPC npc = new NPC(npcName, npcFriendly, npcdescription, npcSize);
                     room.setNPC(npc);
                 }
                 rooms.put(roomId, room);
