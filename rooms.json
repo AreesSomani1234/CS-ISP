@@ -1,20 +1,178 @@
 {
     "Finch Station": {
       "name": "Finch Station",
-      "description": "You are starting at Finch Station.",
+      "description": "Welcome to the abandoned TTC map. For this  you have to find 3 keys throughout the whole subway line to Escape. You will encounter monsters, NPC's and items that you could use. Good Luck!",
       "exits": {
         "south": "Sheppard Yonge"
       },
       
-      
-     "Sheppard Yonge":{
+
+    "Sheppard Yonge":{
         "name": "Sheppard Yonge",
-         "description": "You are now at Sheppard Yonge, if you want to exit left go east. If you want to exit south, you go to York Mills station"
-     }, 
+         "description": "You are now at Sheppard Yonge, explore the area and see what you can find. If you want to exit left go east. If you want to exit south, you go to York Mills station",
+          "exits": {
+            "south": "York Mills",
+            "east": "Bayview"
+        } 
+      }
+      ,
+      
+     "Bayview ":{
+        "name": "Bayview",
+         "description": "You are at Bayview Station, head west to Leslie or go East ",
+          "exits": {
+            "east": "Leslie",
+            "west": "Sheppard Yonge"
+        }
+      }
+      ,
+
+
+      "Leslie":{
+        "name": "Leslie",
+         "description": "You are now at Leslie go east to don mills station or west back to Bayview",
+          "exits": {
+            "east": "Don Mills",
+            "west": "Bayview"
+        } 
+      }
+      ,
+
+      "Don Mills":{
+        "name": "Don Mills",
+         "description": "You are now at Leslie go east to don mills station or west back to Bayview",
+          "exits": {
+            "west": "Leslie"
+        } 
+      }
+      ,
+      
+      
+
+      "York Mills": {
+      "name": "York Mills Station",
+      "description": "You are now at York mills Station. You can explore and find items/ NPC's or head south to Lawrence Station",
+      "exits": {
+        "south": "Lawrence",
+        "north": "Sheppard Yonge"
+      }
+    },
+      "Lawrence": {
+      "name": "Lawrence Station",
+      "description": "You are now at Lawrence Station. You can explore and find items or head south to Eglinton Station",
+      "exits": {
+        "south": "Eglinton",
+        "north": "York Mills"
+      } 
+      },
+      "Eglinton": {
+      "name": "Eglinton",
+      "description": "You are now at Eglinton Station. Do you have the corrupted Presto card for the gate to enter St Clair Station?. If not, head back to previous stations and check for the card",
+      "exits": {
+        "south": "St Clair",
+        "north": "Lawrence"
+      }
+
+    },
+
+      "St Clair": {
+      "name": "St Clair",
+      "description": "You are now at St Clair Station. You can now head south to Bloor Yonge",
+      "exits": {
+        "south": "Bloor Yonge"
+      }, 
+
+      "Bloor Yonge": {
+      "name": "Bloor Yonge",
+      "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+      "exits": {
+        "south": "Dundas",
+        "north": "St Clair"
+      }
+    },
+      
+      
+      "Dundas": {
+      "name": "Dundas",
+      "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+      "exits": {
+        "south": "Queen",
+        "north": "Bloor Yonge"
+      }
+    },
+
+    "Queen": {
+      "name": "Queen",
+      "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+      "exits": {
+        "south": "King",
+        "north": "Dundas"
+      }
+    },
+
+      "King": {
+      "name": "King",
+      "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+      "exits": {
+        "south": "Union",
+        "north": "Queen"
+      }
+    },
       
       
       
-      "items": [
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      "items": {
         {
           "id": "key1",
           "name": "Key",
@@ -24,7 +182,7 @@
           "isKey": true,
           "keyType": 1
         }
-      ],
+    },
       "npc":{
         "name": "Steve",
         "friendly":"true"
