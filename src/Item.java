@@ -6,12 +6,14 @@ public class Item {
     private boolean weapon;
     private int health;
     private int strength;
+    private int weight;
 
     public Item(String id, String name, String description, boolean consumable, boolean weapon) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.consumable = consumable;
+        weight = 5;
         if(consumable){
             strength = 0;
             health = 50;
@@ -45,6 +47,9 @@ public class Item {
     }
     public int getStrength(){
         return strength;
+    }
+    public int getItemWeight(){
+        return weight;
     }
     public String getId() {
         return id;

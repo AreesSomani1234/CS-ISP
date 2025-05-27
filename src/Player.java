@@ -8,6 +8,7 @@ public class Player {
     private int playerStrength;
     private int keyCount;
     final private int playerMaxHealth = 100;
+    final private int maxWeight = 25;
 
     private static final String ESCAPE_ROOM_ID = "escape";
     private static final int REQUIRED_EXIT_KEYS = 3;
@@ -52,6 +53,22 @@ public class Player {
     public int GetKeyCount()
     {
         return keyCount;
+    }
+    public int inventoryWeight(){ //-Arees-gets the weight of the inventory
+        int weight = 0;
+        List<Item> playerInventory = getInventory();
+        for(Item i : playerInventory){
+            weight += i.getItemWeight();
+        }
+        return weight;
+
+    }
+    public void removeInventoryItem(){ // if inventory has to much weight removes last item piked up./ need to implent choose which items to drop
+        List<Item> playerInventory = getInventory();
+        if(inventoryWeight() > maxWeight){
+            playerInventory.remove(playerInventory.size()-1);
+        }
+
     }
 
     public void updatePlayerHealth(int healthUpdate){
