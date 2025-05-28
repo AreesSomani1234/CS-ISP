@@ -453,7 +453,7 @@
           "keyType": 3
 
   }],
-      "Items":[]
+      "items":[]
       }, 
 
 
@@ -470,7 +470,7 @@
         "east": "D Area1"
       },
       "NPC": [],
-      "Items":[]
+      "items":[]
     },
 
   "D area1":{
