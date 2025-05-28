@@ -33,7 +33,7 @@ public class RoomLoader {
                     boolean isWeapon = itemObj.get("weapon").getAsBoolean();
                     boolean isKey = itemObj.get("isKey").getAsBoolean();
                     if (isKey) {
-                        int keyType = itemObj.get("keyType").getAsInt();
+                        int keyType = itemObj.get("keyType")!= null ? itemObj.get("keyType").getAsInt() : -1;
                         items.add(new RoomKey(itemId, itemName, itemDescription, keyType));
                     } else {
                         items.add(new Item(itemId, itemName, itemDescription, isConsumable, isWeapon));
