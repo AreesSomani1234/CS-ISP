@@ -438,14 +438,17 @@
       
       
       
-      "items": {
+      "items": [
         {
           "id": "key1",
           "name": "Key",
           "description": "A small rusty key.",
           "consumable": false,
-          "weapon": false
+          "weapon": false,
+          "isKey": true,
+          "keyType": 1
         }
+      ]
     },
       "npc":{
         "name": "Steve",

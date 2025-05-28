@@ -12,7 +12,7 @@ public class Room {
     private boolean needsKey; // room needs key to go in
 
 
-    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, NPC npc, RoomKey hasKey, boolean needsKey) {
+    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, NPC npc, boolean needsKey) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -52,6 +52,10 @@ public class Room {
     }
     public void setNPC(NPC npc) {
         this.npc = npc;
+    }
+    public NPC getNPC()
+    {
+        return npc;
     }
 
 

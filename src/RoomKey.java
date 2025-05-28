@@ -1,32 +1,33 @@
-public class RoomKey {
-    private boolean stClairEnteranceKey;
-    private boolean queenEnteranceKey;
-    private boolean exitKey1;
-    private boolean exitKey2;
-    private boolean exitKey3;
+public class RoomKey extends Item{
+    private int keyType;
+    private static final int ST_CLAIR_ENTRANCE = 0;
+    private static final int QUEEN = 1;
+    private static final int EXIT_1 = 2;
+    private static final int EXIT_2 = 3;
+    private static final int EXIT_3 = 4;
 
-    public RoomKey(boolean stClairEnteranceKey,boolean queenEnteranceKey, boolean exitKey1, boolean exitKey2, boolean exitKey3){
-        this.stClairEnteranceKey = stClairEnteranceKey;
-        this.queenEnteranceKey = queenEnteranceKey;
-        this.exitKey1 = exitKey1;
-        this.exitKey2 = exitKey2;
-        this.exitKey3 = exitKey3;
+
+
+
+    public RoomKey(String id, String name, String description, int keyType){
+        super(id, name, description, false, false);
+        this.keyType = keyType;
     }
 
     public boolean getstClairEnteranceKey(){
-        return stClairEnteranceKey;
+        return keyType == ST_CLAIR_ENTRANCE;
     }
     public boolean getqueenEnteranceKey(){
-        return queenEnteranceKey;
+        return keyType == QUEEN;
     }
     public boolean getexitKey1(){
-        return exitKey1;
+        return keyType == EXIT_1;
     }
     public boolean getexitKey2(){
-        return exitKey2;
+        return keyType == EXIT_2;
     }
     public boolean getexitKey3(){
-        return exitKey3;
+        return keyType == EXIT_3;
     }
 }
 
