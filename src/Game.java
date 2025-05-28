@@ -25,6 +25,9 @@ public class Game {
         System.out.println(currentRoom.getLongDescription());
         boolean gameOver = false;
         while (!gameOver) {
+            if(player.getPlayerHealth() <= 0){
+                gameOver = true;
+            }
             
             System.out.print("> ");
             String input = scanner.nextLine();
