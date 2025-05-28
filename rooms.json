@@ -330,7 +330,9 @@
     "roomID": "Bloor Yonge",
     "exits": {
       "south": "Dundas",
-      "north": "St Clair"
+      "north": "St Clair",
+      "west": "BY Area01",
+      "east": "BY Area1"
     },
     "items": [],
     "NPC": []
@@ -445,7 +447,7 @@
   },
   "Dundas": {
     "name": "Dundas",
-    "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+    "description": "You are now at Dundas. The station is very big and I would recommend you explore because you never know what there is.",
     "roomID": "Dundas",
     "exits": {
       "south": "Queen",
@@ -456,7 +458,7 @@
     "items": []
   },
   "D Area1": {
-    "name": "Dundas area1",
+    "name": "Dundas Area1",
     "description": "You are at Dundas area 1.There are no items or entities ",
     "roomID": "D Area1",
     "exits": {
@@ -467,7 +469,7 @@
     "items": []
   },
   "D Area2": {
-    "name": "Dundas area2",
+    "name": "Dundas Area2",
     "description": "You are at Dundas area 2.There are no items or entities ",
     "roomID": "D Area2",
     "exits": {
@@ -478,7 +480,7 @@
     "items": []
   },
   "D Area3": {
-    "name": "Dundas area3",
+    "name": "Dundas Area3",
     "description": "You are at Dundas area 2.There are no items but there is a Fireless Prophet ",
     "roomID": "D Area3",
     "exits": {
@@ -515,10 +517,10 @@
       }
     ]
   },
-  "Queens": {
-    "name": "Queens",
-    "description": "You are now at Queen's Station.  There is nothing here, I recommend going to the next station",
-    "roomID": "Queens",
+  "Queen": {
+    "name": "Queen",
+    "description": "You are now at Queen Station.  There is nothing here, I recommend going to the next station",
+    "roomID": "Queen",
     "exits": {
       "south": "King",
       "north": "Dundas"
@@ -531,7 +533,7 @@
     "description": "You are now at King's Station. There is nothing here, I recommend going to the next station",
     "exits": {
       "south": "Union",
-      "north": "Queens"
+      "north": "Queen"
     },
     "NPC": [],
     "items": []
@@ -551,7 +553,7 @@
     "description": "You are at Union area 1.There are no items or entities ",
     "roomID": "U area 1",
     "exits": {
-      "east": "D Area2",
+      "east": "U Area2",
       "west": "Union"
     },
     "NPC": [],
@@ -560,7 +562,7 @@
   "U Area2": {
     "name": "Union Area 2",
     "description": "You are at Union area 2.There are no items but there is a guardian NPC",
-    "roomID": "U area 2",
+    "roomID": "U Area 2",
     "exits": {
       "west": "D Area1"
     },
