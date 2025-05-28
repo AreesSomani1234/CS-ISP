@@ -13,7 +13,7 @@
     "description": "You are now at Sheppard Yonge, explore the area and see what you can find. If you want to exit left go east. If you want to exit south, you go to York Mills station",
     "exits": {
       "south": "York Mills",
-      "east": "SY area2"
+      "east": "SY Area1"
     },
     "NPC": [],
     "items": []
