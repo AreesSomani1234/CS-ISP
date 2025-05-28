@@ -301,7 +301,7 @@
             "east": "Lawrence"
         },
           "NPC": [],
-      "Items":[{
+      "items":[{
           "id": "Corrupted Presto",
           "name": "Corrupted Presto Card",
           "description": "You have found a health Potion which will add 50 to your health bar. Use it wisely!",
@@ -453,7 +453,7 @@
           "keyType": 3
 
   }],
-      "Items":[]
+      "items":[]
       }, 
 
 
@@ -470,7 +470,7 @@
         "east": "D Area1"
       },
       "NPC": [],
-      "Items":[]
+      "items":[]
     },
 
   "D area1":{
