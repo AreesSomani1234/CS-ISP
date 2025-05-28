@@ -7,8 +7,8 @@ public class Player {
     private int playerHealth;
     private int playerStrength;
     private int keyCount;
-    final private int playerMaxHealth = 100;
-    final private int maxWeight = 25;
+    private final int playerMaxHealth = 100;
+    private final int maxWeight = 40;
 
     private static final String ESCAPE_ROOM_ID = "escape";
     private static final int REQUIRED_EXIT_KEYS = 3;
@@ -20,9 +20,10 @@ public class Player {
         this.playerStrength = 0;
     }
 
-    public int getPlayerHealth(){
+    public int getPlayerHealth() {
         return playerHealth;
     }
+
     public String getCurrentRoomId() {
         return currentRoomId;
     }
@@ -42,46 +43,56 @@ public class Player {
     public List<Item> getInventory() {
         return inventory;
     }
-    public void updatePlayerStrength(int val){
+
+    public void updatePlayerStrength(int val) {
         playerStrength += val;
     }
-    public void GivePlayerKey()
-    {
+
+    public void GivePlayerKey() {
         System.out.println("You got a key");
-        keyCount ++;
+        keyCount++;
     }
-    public int GetKeyCount()
-    {
+
+    public int GetKeyCount() {
         return keyCount;
     }
-    public int inventoryWeight(){ //-Arees-gets the weight of the inventory
+
+    public int inventoryWeight() { // -Arees-gets the weight of the inventory
         int weight = 0;
         List<Item> playerInventory = getInventory();
-        for(Item i : playerInventory){
+        for (Item i : playerInventory) {
             weight += i.getItemWeight();
         }
         return weight;
 
     }
-    public void removeInventoryItem(){ // if inventory has to much weight removes last item piked up./ need to implent choose which items to drop
+
+    public void removeInventoryItem() { // if inventory has to much weight removes last item piked up./ need to implent
+                                        // choose which items to drop
         List<Item> playerInventory = getInventory();
-        if(inventoryWeight() > maxWeight){
-            playerInventory.remove(playerInventory.size()-1);
+        if (inventoryWeight() > maxWeight) {
+            for (int i = playerInventory.size() - 1; i >= 0; i--) {
+                Item item = playerInventory.get(i);
+                if(!(item instanceof RoomKey)){
+                    playerInventory.remove(i);
+                    break; // breaks the loop so that more than 1 item isnt removed
+                }
+            }
         }
 
     }
 
-    public void updatePlayerHealth(int healthUpdate){
+    public void updatePlayerHealth(int healthUpdate) {
         playerHealth += healthUpdate;
-        if(playerHealth >= playerMaxHealth)
-        {
+        if (playerHealth >= playerMaxHealth) {
             playerHealth = playerMaxHealth;
         }
-        
+
         System.out.println("Your health is: " + playerHealth);
     }
-    public void PlayerAttack(NPC npc, Item item){
-        if(playerStrength > 0){
+
+    public void PlayerAttack(NPC npc, Item item) {
+        if (playerStrength > 0) {
             System.out.println("you are attacking the " + npc.getNPCname() + " with your weapon");
             npc.NPCDeath();
 

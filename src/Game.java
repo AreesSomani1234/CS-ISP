@@ -16,6 +16,7 @@ public class Game {
     public void start() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
+        System.out.println("Game: Stuck in the TTC");
         System.out.println("Welcome to the abandoned TTC");
         System.out.println("you are stuck underground in the abandoned tracks at Finch station");
         System.out.println("Your goal is to find travel around each station and find 3 hidden keys to bring them to Union station to escape.");
@@ -29,5 +30,6 @@ public class Game {
             String input = scanner.nextLine();
             commandParser.parse(input, player, rooms);
         }
+        System.out.println("You completed: Stuck in the TTC");
     }
 }
