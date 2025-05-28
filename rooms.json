@@ -61,7 +61,7 @@
       "north": "SY Area1"
     },
     "NPC": [],
-    "Items": []
+    "items": []
   },
   "Bayview ": {
     "name": "Bayview",
@@ -173,7 +173,7 @@
       "north": "YM area4"
     },
     "NPC": [],
-    "Items": []
+    "items": []
   },
   "YM Area 2": {
     "name": "York Mills area 2",
@@ -184,7 +184,7 @@
       "west": ""
     },
     "NPC": [],
-    "Items": []
+    "items": []
   },
   "YM Area3": {
     "name": "York Mills area 3",
@@ -194,7 +194,7 @@
       "west": "YM Area"
     },
     "NPC": [],
-    "Items": [
+    "items": [
       {
         "id": "Key2",
         "name": "Key2",
@@ -215,7 +215,7 @@
       "west": "YM Area5"
     },
     "NPC": [],
-    "Items": [
+    "items": [
       {
         "id": "Sword",
         "name": "Sword",
@@ -235,7 +235,7 @@
       "east": "YM Area4"
     },
     "NPC": [],
-    "Items": []
+    "items": []
   },
   "Lawrence": {
     "name": "Lawrence Station",
