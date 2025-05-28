@@ -49,7 +49,7 @@
     "NPC": [
       {
         "name": "Grubber",
-        "description": "A skittish, mutated scavenger obsessed with shiny objects and wires. It’s unfriendly and attacks by leaping and biting if cornered.",
+        "description": "A skittish, mutated scavenger obsessed with shiny objects and wires. Its unfriendly and attacks by leaping and biting if cornered.",
         "friendly": false,
         "size": "Small"
       }
@@ -63,7 +63,7 @@
       "north": "SY Area1"
     },
     "NPC": [],
-    "Items": []
+    "items": []
   },
   "Bayview ": {
     "name": "Bayview",
@@ -155,7 +155,7 @@
     "NPC": []
   },
   "York Mills": {
-    "name": "York Mills Station",
+    "name": "York Mills",
     "description": "You are now at York mills Station. You can explore and find items/ NPC's or head south to Lawrence Station",
     "roomID": "York Mills",
     "exits": {
@@ -176,7 +176,7 @@
       "north": "YM Area4"
     },
     "NPC": [],
-    "Items": []
+    "items": []
   },
   "YM Area 2": {
     "name": "York Mills area 2",
@@ -187,7 +187,7 @@
       "west": "YM Area3"
     },
     "NPC": [],
-    "Items": []
+    "items": []
   },
   "YM Area3": {
     "name": "York Mills area 3",
@@ -198,7 +198,7 @@
       "north": "YM Area5"
     },
     "NPC": [],
-    "Items": [
+    "items": [
       {
         "id": "Key2",
         "name": "Key2",
@@ -219,7 +219,7 @@
       "west": "YM Area5"
     },
     "NPC": [],
-    "Items": [
+    "items": [
       {
         "id": "Sword",
         "name": "Sword",
@@ -239,7 +239,7 @@
       "east": "YM Area4"
     },
     "NPC": [],
-    "Items": []
+    "items": []
   },
   "Lawrence": {
     "name": "Lawrence Station",
