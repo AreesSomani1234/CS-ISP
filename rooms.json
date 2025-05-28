@@ -1,617 +1,568 @@
 {
-    "Finch Station": {
-      "name": "Finch Station",
-      "description": "You are starting at Finch station don't be scared to explore other stations aswell. Good luck!",
-      "exits": {
-        "south": "Sheppard Yonge"
+  "Finch Station": {
+    "name": "Finch Station",
+    "description": "You are starting at Finch station don't be scared to explore other stations aswell. Good luck!",
+    "exits": {
+      "south": "Sheppard Yonge"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "Sheppard Yonge": {
+    "name": "Sheppard Yonge",
+    "description": "You are now at Sheppard Yonge, explore the area and see what you can find. If you want to exit left go east. If you want to exit south, you go to York Mills station",
+    "exits": {
+      "south": "York Mills",
+      "east": "SY area2"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "SY Area1": {
+    "name": "Sheppard Yonge Area 1",
+    "description": "You are in Sheppard Yonge area 1. There are no entities however there is a pocket Knife ",
+    "exits": {
+      "west": "SY Area2",
+      "south": "SY Area3"
+    },
+    "NPC": [],
+    "items": [
+      {
+        "id": "Pocket Knife",
+        "name": "Pocket Knife",
+        "description": "The pocket knife at Sheppard Yonge station helps you cut things and help open tightly packed stuff. It also helps you kill animals if you do not have access to the sword yet but will deal less damage..",
+        "consumable": false,
+        "weapon": true,
+        "isKey": false
       }
+    ]
+  },
+  "SY Area2": {
+    "name": "Sheppard Yonge Area 2",
+    "description": "You are in Sheppard Yonge area 2. There is a Grubber NPC but no items ",
+    "exits": {
+      "east": "SY Area1",
+      "west": "Bayview"
     },
-      
-
-    "Sheppard Yonge":{
-        "name": "Sheppard Yonge",
-         "description": "You are now at Sheppard Yonge, explore the area and see what you can find. If you want to exit left go east. If you want to exit south, you go to York Mills station",
-          "exits": {
-            "south": "York Mills",
-            "east": "SY area2"
-        } 
+    "NPC": [
+      {
+        "name": "Grubber",
+        "description": "A skittish, mutated scavenger obsessed with shiny objects and wires. It’s unfriendly and attacks by leaping and biting if cornered.",
+        "friendly": false,
+        "size": "Small"
       }
-      ,
-
-
-      "SY Area1":{
-        "name": "Sheppard Yonge Area 1",
-         "description": "You are in Sheppard Yonge area 1. There are no entities however there is a pocket Knife ",
-          "exits": {
-            "west": "SY Area2",
-            "south": "SY Area3"
-        },
-        
-        "Items": [{
-          "id": "Pocket Knife",
-          "name": "Pocket Knife",
-          "description": "The pocket knife at Sheppard Yonge station helps you cut things and help open tightly packed stuff. It also helps you kill animals if you do not have access to the sword yet but will deal less damage..",
-          "consumable": false,
-          "weapon": true,
-          "isKey": false
-        }
-      ]
+    ]
+  },
+  "SY Area3": {
+    "name": "Sheppard Yonge Area 3",
+    "description": "You are in Sheppard Yonge area 3. There are no entities of items ",
+    "exits": {
+      "north": "SY Area1"
     },
-      
-      "SY Area2":{
-        "name": "Sheppard Yonge Area 2",
-         "description": "You are in Sheppard Yonge area 2. There is a Grubber NPC but no items ",
-          "exits": {
-            "east": "SY Area1",
-            "west": "Bayview"
-        },
-        
-          "NPC": [{
-          "name": "Grubber",
-          "description": "A skittish, mutated scavenger obsessed with shiny objects and wires. It’s unfriendly and attacks by leaping and biting if cornered.",
-          "friendly": false,
-          "size": "Small"
-        }
-      ]
+    "NPC": [],
+    "Items": []
+  },
+  "Bayview ": {
+    "name": "Bayview",
+    "description": "You are at Bayview Station, head west to Leslie or go East ",
+    "exits": {
+      "east": "Leslie",
+      "west": "Sheppard Yonge"
     },
-
-      "SY Area3":{
-        "name": "Sheppard Yonge Area 3",
-         "description": "You are in Sheppard Yonge area 3. There are no entities of items ",
-          "exits": {
-            "north": "SY Area1"
-        },
-        
-          "NPC": [],
-          "Items":[]
+    "NPC": [],
+    "items": []
+  },
+  "Leslie": {
+    "name": "Leslie",
+    "description": "You are now at Leslie go east to don mills station or west back to Bayview",
+    "exits": {
+      "east": "Don Mills",
+      "west": "Bayview"
     },
-      
-     "Bayview ":{
-        "name": "Bayview",
-         "description": "You are at Bayview Station, head west to Leslie or go East ",
-          "exits": {
-            "east": "Leslie",
-            "west": "Sheppard Yonge"
-        }
+    "NPC": [],
+    "items": []
+  },
+  "Don Mills": {
+    "name": "Don Mills",
+    "description": "You are now at Leslie go east to don mills station or west back to Bayview",
+    "roomID": "Don Mills",
+    "exits": {
+      "west": "Leslie",
+      "north": "DM Area1"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "DM Area1": {
+    "name": "Don Mills Area1",
+    "description": "There is nothing here",
+    "roomID": "DM Area1",
+    "exits": {
+      "south": "Don Mills",
+      "west": "DM Area2"
+    },
+    "NPC": [
+      {
+        "name": "Rattle Back",
+        "description": "A deranged maintenance mech fused with wreckage and corrupted code, now guarding its key like it's sacred. Unfriendly and aggressive, it slams the ground to trigger shockwaves and charges intruders.",
+        "friendly": false,
+        "size": "Big"
       }
-      ,
-
-
-      "Leslie":{
-        "name": "Leslie",
-         "description": "You are now at Leslie go east to don mills station or west back to Bayview",
-          "exits": {
-            "east": "Don Mills",
-            "west": "Bayview"
-        } 
+    ],
+    "items": []
+  },
+  "DM Area2": {
+    "name": "Don Mills Area2",
+    "description": "You are in Don Mills area 2. There are no entities however there is a key",
+    "roomID": "DM Area2",
+    "exits": {
+      "east": "DM Area1"
+    },
+    "items": [
+      {
+        "id": "key1",
+        "name": "Key",
+        "description": "A small rusty key.",
+        "consumable": false,
+        "weapon": false,
+        "isKey": true,
+        "keyType": 1
       }
-      ,
-
-      "Don Mills":{
-        "name": "Don Mills",
-         "description": "You are now at Leslie go east to don mills station or west back to Bayview",
-          "roomID": "Don Mills",
-          "exits": {
-            "west": "Leslie",
-            "north": "DM Area1"
-        } 
+    ],
+    "NPC": []
+  },
+  "DM Area3": {
+    "name": "Don Mills Area3",
+    "description": "You are in Don Mills area 3. There is an NPC and a Health Potion",
+    "roomID": "DM Area2",
+    "exits": {
+      "east": "DM Area1"
+    },
+    "items": [
+      {
+        "id": "Health Potion",
+        "name": "Health Potion",
+        "description": "You have found a health Potion which will add 50 to your health bar. Use it wisely!",
+        "consumable": true,
+        "weapon": false,
+        "isKey": false
       }
-      ,
-
-      "DM Area1":{
-        "name": "Don Mills Area1",
-         "description": "There is nothing here",
-         "roomID": "DM Area1",
-          "exits": {
-            "south": "Don Mills",
-            "west": "DM Area2"
-        },
-          "NPC": [{
-          "name": "Rattle Back",
-          "description": "A deranged maintenance mech fused with wreckage and corrupted code, now guarding its key like it's sacred. Unfriendly and aggressive, it slams the ground to trigger shockwaves and charges intruders.",
-          "friendly": false,
-          "size": "Big"
-        }
-      ]
-
+    ],
+    "NPC": []
+  },
+  "York Mills": {
+    "name": "York Mills Station",
+    "description": "You are now at York mills Station. You can explore and find items/ NPC's or head south to Lawrence Station",
+    "roomID": "York Mills",
+    "exits": {
+      "south": "Lawrence",
+      "north": "Sheppard Yonge",
+      "west": "YM Area"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "YM Area 1": {
+    "name": "York Mills Area1",
+    "description": "You are at York Mills area 1. There are no entities or NPC's",
+    "roomID": "YM Area1",
+    "exits": {
+      "east": "York Mills",
+      "west": "YM Area2",
+      "north": "YM area4"
+    },
+    "NPC": [],
+    "Items": []
+  },
+  "YM Area 2": {
+    "name": "York Mills area 2",
+    "description": "You are at York Mills Area2. There are no NPC's and no items",
+    "roomID": "YM area 2",
+    "exits": {
+      "east": "YM Area1",
+      "west": ""
+    },
+    "NPC": [],
+    "Items": []
+  },
+  "YM Area3": {
+    "name": "York Mills area 3",
+    "description": "You are at York Mills Area3. There are no NPC's but there is a key",
+    "roomID": "YM area 3",
+    "exits": {
+      "west": "YM Area"
+    },
+    "NPC": [],
+    "Items": [
+      {
+        "id": "Key2",
+        "name": "Key2",
+        "description": "You have found a key. This will help you escape the game. Make sure that you find the 2 others!",
+        "consumable": false,
+        "weapon": false,
+        "isKey": true,
+        "keyType": 2
       }
-      ,
-
-      "DM Area2":{
-        "name": "Don Mills Area2",
-         "description": "You are in Don Mills area 2. There are no entities however there is a key",
-          "roomID": "DM Area2",
-          "exits": {
-            "east": "DM Area1"
-        },
-        
-        "Items": [{
-          "id": "key1",
-          "name": "Key",
-          "description": "A small rusty key.",
-          "consumable": false,
-          "weapon": false,
-          "isKey": true,
-          "keyType": 1
-        }
-      ]
+    ]
+  },
+  "YM Area4": {
+    "name": "York Mills area 4",
+    "description": "You are at York Mills Area4. There are no NPC's but there is a sword",
+    "roomID": "YM area 4",
+    "exits": {
+      "south": "YM Area1",
+      "west": "YM Area5"
     },
-        "DM Area3":{
-        "name": "Don Mills Area3",
-         "description": "You are in Don Mills area 3. There is an NPC and a Health Potion",
-          "roomID": "DM Area2",
-          "exits": {
-            "east": "DM Area1"
-        },
-        
-        "Items": [{
-          "id": "Health Potion",
-          "name": "Health Potion",
-          "description": "You have found a health Potion which will add 50 to your health bar. Use it wisely!",
-          "consumable": true,
-          "weapon": false,
-          "isKey": false
-        }
-      ]
-
-        },
-      
-      
-
-      "York Mills": {
-      "name": "York Mills Station",
-      "description": "You are now at York mills Station. You can explore and find items/ NPC's or head south to Lawrence Station",
-      "roomID": "York Mills",
-      "exits": {
-        "south": "Lawrence",
-        "north": "Sheppard Yonge",
-        "west": "YM Area"
+    "NPC": [],
+    "Items": [
+      {
+        "id": "Sword",
+        "name": "Sword",
+        "description": "The sword in the York mills Station helps you fend off monsters",
+        "consumable": false,
+        "weapon": true,
+        "isKey": false
       }
+    ]
+  },
+  "YM Area5": {
+    "name": "York Mills area 5",
+    "description": "You are at York Mills Area5. There are no NPC's and no items",
+    "roomID": "YM area 5",
+    "exits": {
+      "south": "YM Area3",
+      "east": "YM Area4"
     },
-
-
-
-      "YM Area 1":{
-        "name": "York Mills Area1",
-         "description": "You are at York Mills area 1. There are no entities or NPC's",
-         "roomID": "YM Area1",
-          "exits": {
-            "east": "York Mills",
-            "west": "YM Area2",
-            "north": "YM area4"
-        },
-          "NPC": [],
-      "Items":[]
-      },
-
-
-    "YM Area 2":{
-        "name": "York Mills area 2",
-         "description": "You are at York Mills Area2. There are no NPC's and no items",
-         "roomID": "YM area 2",
-          "exits": {
-            "east": "YM Area1",
-            "west": ""
-        },
-          "NPC": [],
-      "Items":[]
-      },  
-      
-      
-      "YM Area3":{
-        "name": "York Mills area 3",
-         "description": "You are at York Mills Area3. There are no NPC's but there is a key",
-         "roomID": "YM area 3",
-          "exits": {
-            "west": "YM Area"
-        },
-          "NPC": [],
-      "Items":[{
-          "id": "Key2",
-          "name": "Key2",
-          "description": "You have found a key. This will help you escape the game. Make sure that you find the 2 others!",
-          "consumable": false,
-          "weapon": false,
-          "isKey": true,
-          "keyType": 2
-        }]
-      },     
-
-      "YM Area4":{
-        "name": "York Mills area 4",
-         "description": "You are at York Mills Area4. There are no NPC's but there is a sword",
-         "roomID": "YM area 4",
-          "exits": {
-            "south": "YM Area1",
-            "west": "YM Area5"
-        },
-          "NPC": [],
-      "Items":[{
-          "id": "Sword",
-          "name": "Sword",
-          "description": "The sword in the York mills Station helps you fend off monsters",
-          "consumable": false,
-          "weapon": true,
-          "isKey": false
-        }]
-      },
-      
-      "YM Area5":{
-        "name": "York Mills area 5",
-         "description": "You are at York Mills Area5. There are no NPC's and no items",
-         "roomID": "YM area 5",
-          "exits": {
-            "south": "YM Area3",
-            "east": "YM Area4"
-        },
-          "NPC": [],
-      "Items":[]
-      }, 
-
-
-
-
-      "Lawrence": {
-      "name": "Lawrence Station",
-      "description": "You are now at Lawrence Station. You can explore and find items or head south to Eglinton Station",
-      "roomID": "Lawrence",
-      "exits": {
-        "south": "Eglinton",
-        "north": "York Mills"
-      },
-      
-      "L Area1":{
-        "name": "Lawrence Area1",
-         "description": "You are at Lawrence Area1. There is nothing here ",
-         "roomID": "L Area1",
-          "exits": {
-            "east": "Lawrence"
-        },
-          "NPC": [],
-      "Items":[]
+    "NPC": [],
+    "Items": []
+  },
+  "Lawrence": {
+    "name": "Lawrence Station",
+    "description": "You are now at Lawrence Station. You can explore and find items or head south to Eglinton Station",
+    "roomID": "Lawrence",
+    "exits": {
+      "south": "Eglinton",
+      "north": "York Mills"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "L Area1": {
+    "name": "Lawrence Area1",
+    "description": "You are at Lawrence Area1. There is nothing here ",
+    "roomID": "L Area1",
+    "exits": {
+      "east": "Lawrence"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "L Area2": {
+    "name": "Lawrence Area2",
+    "description": "You are at Lawrence Area2. There are no items but there is a whisperer NPC ",
+    "roomID": "L Area2",
+    "exits": {
+      "east": "L area3",
+      "west": "Lawrence"
+    },
+    "NPC": [
+      {
+        "name": "Whisperer",
+        "description": ": A cloaked being that speaks only in your own voice, revealing your worst fears. Unfriendly and uses psychic weapons that disorient and drain health.",
+        "friendly": false,
+        "size": "Big"
       }
-      },      
-      
-      
-      
-      
-      "L Area2":{
-        "name": "Lawrence Area2",
-         "description": "You are at Lawrence Area2. There are no items but there is a whisperer NPC ",
-         "roomID": "L Area2",
-          "exits": {
-            "east": "L area3",
-            "west": "Lawrence"
-        },
-          "NPC": [{
-          "name": "Whisperer",
-          "description": ": A cloaked being that speaks only in your own voice, revealing your worst fears. Unfriendly and uses psychic weapons that disorient and drain health.",
-          "friendly": false,
-          "size": "Big"
-        }
-      ],
-      "Items":[]
-      },
-
-      "L Area3":{
-        "name": "Lawrence Area3",
-         "description": "You are at Lawrence Area3. There is no NPC's however there is a corrupted presto card",
-          "roomID": "L Area3",
-          "exits": {
-            "east": "Lawrence"
-        },
-          "NPC": [],
-      "items":[{
-          "id": "Corrupted Presto",
-          "name": "Corrupted Presto Card",
-          "description": "You have found a health Potion which will add 50 to your health bar. Use it wisely!",
-          "consumable": true,
-          "weapon": false,
-          "isKey": true,
-          "stClairEnteranceKey": true
-        }]
-      },     
-
-      "Eglinton": {
-      "name": "Eglinton",
-      "description": "You are now at Eglinton Station. Do you have the corrupted Presto card for the gate to enter St Clair Station?. If not, head back to previous stations and check for the card",
-      "roomID": "Eglinton",
-      "exits": {
-        "south": "St Clair",
-        "north": "Lawrence"
+    ],
+    "items": []
+  },
+  "L Area3": {
+    "name": "Lawrence Area3",
+    "description": "You are at Lawrence Area3. There is no NPC's however there is a corrupted presto card",
+    "roomID": "L Area3",
+    "exits": {
+      "east": "Lawrence"
+    },
+    "NPC": [],
+    "items": [
+      {
+        "id": "Corrupted Presto",
+        "name": "Corrupted Presto Card",
+        "description": "You have found a health Potion which will add 50 to your health bar. Use it wisely!",
+        "consumable": true,
+        "weapon": false,
+        "isKey": true,
+        "stClairEnteranceKey": true
       }
-
+    ]
+  },
+  "Eglinton": {
+    "name": "Eglinton",
+    "description": "You are now at Eglinton Station. Do you have the corrupted Presto card for the gate to enter St Clair Station?. If not, head back to previous stations and check for the card",
+    "roomID": "Eglinton",
+    "exits": {
+      "south": "St Clair",
+      "north": "Lawrence"
     },
-
-      "St Clair": {
-      "name": "St Clair",
-      "description": "You are now 9at St Clair Station. You can now head south to Bloor Yonge",
-      "roomID": "St Clair",
-      "exits": {
-        "south": "Bloor Yonge"
-      }, 
-
-      "Bloor Yonge": {
-      "name": "Bloor Yonge",
-      "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
-      "roomID": "Bloor Yonge",
-      "exits": {
-        "south": "Dundas",
-        "north": "St Clair"
-        
-      },
-      "items":[],
-      "NPC": []
+    "NPC": [],
+    "items": []
+  },
+  "St Clair": {
+    "name": "St Clair",
+    "description": "You are now 9at St Clair Station. You can now head south to Bloor Yonge",
+    "roomID": "St Clair",
+    "exits": {
+      "south": "Bloor Yonge"
     },
-
-    "BY Area01":{
-        "name": "Bloor Yonge area 01",
-         "description": "You are at Bloor Yonge Area 01. There are no NPC's and no items",
-         "roomID": "BY Area 01",
-          "exits": {
-            "west": "BY Area02",
-            "east": "Bloor Yonge",
-            "south": "BY Area03"
-        },
-          "NPC": [],
-      "Items":[]
-      }, 
-
-      "BY Area02":{
-        "name": "Bloor Yonge area 02",
-         "description": "You are at Bloor Yonge Area 02. There are are no NPC's but an unknown potion",
-         "roomID": "BY Area 02",
-          "exits": {
-            "east": "BY area1"
-        },
-          "NPC": [],
-      "Items":[
-        {
-          "id": "Unknown Potion",
-          "name": "Unknown Potion",
-          "description": "Will randomize that potion that you can acquire",
-          "consumable": true,
-          "weapon": false,
-          "isKey": false
-        }
-      ]
-      }, 
-      "BY Area03":{
-        "name": "Bloor Yonge area 03",
-         "description": "You are at Bloor Yonge Area 03. There are no items but there is a spindle NPC ",
-         "roomID": "BY Area 03",
-          "exits": {
-            "north": "BY area1",
-            "south": "BY area 4"
-        },
-          "Items": [],
-      "NPC":[
-        {
-          "name": "Spindle",
-          "description": "An intelligent repair drone turned reclusive inventor, building silk-wire webs through the tunnels. Friendly and will restore your health if you complete a task.",
-          "friendly": true,
-          "size": "Medium"
-        
-        }
-      ]
-      }, 
-
-      "BY Area04":{
-        "name": "Bloor Yonge area 04",
-         "description": "You are at Bloor Yonge Area 04. There are no items or entities",
-         "roomID": "BY Area 04",
-          "exits": {
-            "north": "BY area3"
-        },
-          "NPC": [],
-      "Items":[]
-      }, 
-
-      "BY Area1":{
-        "name": "Bloor Yonge area 1",
-         "description": "You are at Bloor Yonge Area 1. There are no NPC's and no items",
-         "roomID": "BY Area 1",
-          "exits": {
-            "west": "Bloor Yonge",
-            "north": "BY Area2"
-        },
-          "NPC": [],
-      "Items":[]
-      }, 
-
-        "BY Area2":{
-        "name": "Bloor Yonge area 2",
-         "description": "You are at Bloor Yonge Area 2. There are no items but there is a trackwalk NPC",
-         "roomID": "BY Area 2",
-          "exits": {
-            "west": "BY area1",
-            "south": "BY Area3",
-            "east": "BY Area 4"
-        },
-          "NPC": [{  
-          "name": "Trackwalk",
-          "description": "A spectral figure doomed to walk its patrol forever after a failed rescue mission. It’s unfriendly and violently attacks with electrified limbs if anyone blocks its route or approaches the key.",
-          "friendly": false,
-          "size": "medium"
-  }],
-      "Items":[]
-      }, 
-        "BY Area3":{
-        "name": "Bloor Yonge area 3",
-         "description": "You are at Bloor Yonge Area 3. There are no entities but there is a Key",
-         "roomID": "BY Area 3",
-          "exits": {
-            "north": "BY Area2"
-        },
-          "NPC": [{            
-          "id": "Key3",
-          "name": "Key3",
-          "description": "Will randomize that potion that you can acquire",
-          "consumable": true,
-          "weapon": false,
-          "isKey": false,
-          "keyType": 3
-
-  }],
-      "items":[]
-      }, 
-
-
-
-      
-      
-      "Dundas": {
-      "name": "Dundas",
-      "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
-      "roomID": "Dundas",
-      "exits": {
-        "south": "Queen",
-        "north": "Bloor Yonge",
-        "east": "D Area1"
-      },
-      "NPC": [],
-      "items":[]
+    "NPC": [],
+    "items": []
+  },
+  "Bloor Yonge": {
+    "name": "Bloor Yonge",
+    "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+    "roomID": "Bloor Yonge",
+    "exits": {
+      "south": "Dundas",
+      "north": "St Clair"
     },
-
-  "D area1":{
-        "name": "Dundas area1",
-         "description": "You are at Dundas area 1.There are no items or entities ",
-         "roomID": "D Area1",
-          "exits": {
-            "east": "D Area2",
-            "west": "Dundas"
-        },
-          "NPC": [],
-      "Items":[]
-      },
-
-
-      "D area2":{
-        "name": "Dundas area2",
-         "description": "You are at Dundas area 2.There are no items or entities ",
-         "roomID": "D Area2",
-          "exits": {
-            "east": "D Area3",
-            "west": "D Area1"
-        },
-          "NPC": [],
-      "Items":[]
-      },
-
-  "D area3":{
-        "name": "Dundas area3",
-         "description": "You are at Dundas area 2.There are no items but there is a Fireless Prophet ",
-         "roomID": "D Area3",
-          "exits": {
-            "east": "D Area4",
-            "west": "D area 2"
-        },
-          "NPC": [{  
-          "name": "Fireless Prophet",
-          "description": "A scorched zealot of the old flame, now preaching cold salvation beneath flickering lights. Unfriendly and casts sparks of static energy through his sword when interrupted.",
-          "friendly": false,
-          "size": "Small"
-  }],
-      "Items":[]
-      },
-
-    "D area4":{
-        "name": "Dundas area4",
-         "description": "You are at Dundas area 4.There are no NPC but there is a Conductor hat ",
-         "roomID": "D Area4",
-          "exits": {
-            "west": "D area 3"
-        },
-          "NPC": [],
-      "Items":[{
-          "id": "Conductor's hat",
-          "name": "Conductor's hat",
-          "description": "Helps you get past the gate from Dundas and Queen’s station",
-          "consumable": true,
-          "weapon": false,
-          "isKey": true,
-          "queenEnteranceKey": true
-        }]
-      },
-
-
-  
-
-
-    
-
-    "Queens": {
-      "name": "Queens",
-      "description": "You are now at Queen's Station.  There is nothing here, I recommend going to the next station",
-                "roomID": "Queens",
-      "exits": {
-        "south": "King",
-        "north": "Dundas"
-      },
-      "NPC": [],
-      "Items":[]
+    "items": [],
+    "NPC": []
+  },
+  "BY Area01": {
+    "name": "Bloor Yonge area 01",
+    "description": "You are at Bloor Yonge Area 01. There are no NPC's and no items",
+    "roomID": "BY Area 01",
+    "exits": {
+      "west": "BY Area02",
+      "east": "Bloor Yonge",
+      "south": "BY Area03"
     },
-
-      "King": {
-      "name": "King",
-      "description": "You are now at King's Station. There is nothing here, I recommend going to the next station",
-      "exits": {
-        "south": "Union",
-        "north": "Queen"
-      },
-      "NPC": [],
-      "Items":[]
+    "NPC": [],
+    "items": []
+  },
+  "BY Area02": {
+    "name": "Bloor Yonge area 02",
+    "description": "You are at Bloor Yonge Area 02. There are are no NPC's but an unknown potion",
+    "roomID": "BY Area 02",
+    "exits": {
+      "east": "BY area1"
     },
-
-
-      "Union": {
-      "name": "Union",
-      "description": "You are now at the final station Union. Where you can escape. If you have all 3 keys, you can escape but if not access is denied.",
-      "exits": {
-        "south": "King"
-      },
-      "NPC": [],
-      "Items":[]
-    },
-
-
-      "U area1":{
-        "name": "Union Area 1",
-         "description": "You are at Union area 1.There are no items or entities ",
-         "roomID": "U area 1",
-          "exits": {
-            "east": "D Area2"
-        },
-          "NPC": [],
-      "Items":[]
-      },  
-
-
-      "U area2":{
-        "name": "Union Area 2",
-         "description": "You are at Union area 2.There are no items but there is a guardian NPC",
-         "roomID": "U area 2",
-          "exits": {
-            "east": "D Area2"
-        },
-          "NPC": [{  
-          "name": "Guardian NPC",
-          "description": "A towering sentinel powered by forgotten cores, awaiting the chosen bearer of the three subway keys. Friendly unless threatened, it opens the escape only to those who prove themselves",
-          "friendly": true,
-          "size": "big"
-  }]
+    "NPC": [],
+    "items": [
+      {
+        "id": "Unknown Potion",
+        "name": "Unknown Potion",
+        "description": "Will randomize that potion that you can acquire",
+        "consumable": true,
+        "weapon": false,
+        "isKey": false
       }
-    }
-
+    ]
+  },
+  "BY Area03": {
+    "name": "Bloor Yonge area 03",
+    "description": "You are at Bloor Yonge Area 03. There are no items but there is a spindle NPC ",
+    "roomID": "BY Area 03",
+    "exits": {
+      "north": "BY area1",
+      "south": "BY area 4"
+    },
+    "items": [],
+    "NPC": [
+      {
+        "name": "Spindle",
+        "description": "An intelligent repair drone turned reclusive inventor, building silk-wire webs through the tunnels. Friendly and will restore your health if you complete a task.",
+        "friendly": true,
+        "size": "Medium"
+      }
+    ]
+  },
+  "BY Area04": {
+    "name": "Bloor Yonge area 04",
+    "description": "You are at Bloor Yonge Area 04. There are no items or entities",
+    "roomID": "BY Area 04",
+    "exits": {
+      "north": "BY area3"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "BY Area1": {
+    "name": "Bloor Yonge area 1",
+    "description": "You are at Bloor Yonge Area 1. There are no NPC's and no items",
+    "roomID": "BY Area 1",
+    "exits": {
+      "west": "Bloor Yonge",
+      "north": "BY Area2"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "BY Area2": {
+    "name": "Bloor Yonge area 2",
+    "description": "You are at Bloor Yonge Area 2. There are no items but there is a trackwalk NPC",
+    "roomID": "BY Area 2",
+    "exits": {
+      "west": "BY area1",
+      "south": "BY Area3",
+      "east": "BY Area 4"
+    },
+    "NPC": [
+      {
+        "name": "Trackwalk",
+        "description": "A spectral figure doomed to walk its patrol forever after a failed rescue mission. It’s unfriendly and violently attacks with electrified limbs if anyone blocks its route or approaches the key.",
+        "friendly": false,
+        "size": "medium"
+      }
+    ],
+    "items": []
+  },
+  "BY Area3": {
+    "name": "Bloor Yonge area 3",
+    "description": "You are at Bloor Yonge Area 3. There are no entities but there is a Key",
+    "roomID": "BY Area 3",
+    "exits": {
+      "north": "BY Area2"
+    },
+    "NPC": [
+      {
+        "id": "Key3",
+        "name": "Key3",
+        "description": "Will randomize that potion that you can acquire",
+        "consumable": true,
+        "weapon": false,
+        "isKey": false,
+        "keyType": 3
+      }
+    ],
+    "items": []
+  },
+  "Dundas": {
+    "name": "Dundas",
+    "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+    "roomID": "Dundas",
+    "exits": {
+      "south": "Queen",
+      "north": "Bloor Yonge",
+      "east": "D Area1"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "D area1": {
+    "name": "Dundas area1",
+    "description": "You are at Dundas area 1.There are no items or entities ",
+    "roomID": "D Area1",
+    "exits": {
+      "east": "D Area2",
+      "west": "Dundas"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "D area2": {
+    "name": "Dundas area2",
+    "description": "You are at Dundas area 2.There are no items or entities ",
+    "roomID": "D Area2",
+    "exits": {
+      "east": "D Area3",
+      "west": "D Area1"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "D area3": {
+    "name": "Dundas area3",
+    "description": "You are at Dundas area 2.There are no items but there is a Fireless Prophet ",
+    "roomID": "D Area3",
+    "exits": {
+      "east": "D Area4",
+      "west": "D area 2"
+    },
+    "NPC": [
+      {
+        "name": "Fireless Prophet",
+        "description": "A scorched zealot of the old flame, now preaching cold salvation beneath flickering lights. Unfriendly and casts sparks of static energy through his sword when interrupted.",
+        "friendly": false,
+        "size": "Small"
+      }
+    ],
+    "items": []
+  },
+  "D area4": {
+    "name": "Dundas area4",
+    "description": "You are at Dundas area 4.There are no NPC but there is a Conductor hat ",
+    "roomID": "D Area4",
+    "exits": {
+      "west": "D area 3"
+    },
+    "NPC": [],
+    "items": [
+      {
+        "id": "Conductor's hat",
+        "name": "Conductor's hat",
+        "description": "Helps you get past the gate from Dundas and Queen’s station",
+        "consumable": true,
+        "weapon": false,
+        "isKey": true,
+        "queenEnteranceKey": true
+      }
+    ]
+  },
+  "Queens": {
+    "name": "Queens",
+    "description": "You are now at Queen's Station.  There is nothing here, I recommend going to the next station",
+    "roomID": "Queens",
+    "exits": {
+      "south": "King",
+      "north": "Dundas"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "King": {
+    "name": "King",
+    "description": "You are now at King's Station. There is nothing here, I recommend going to the next station",
+    "exits": {
+      "south": "Union",
+      "north": "Queen"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "Union": {
+    "name": "Union",
+    "description": "You are now at the final station Union. Where you can escape. If you have all 3 keys, you can escape but if not access is denied.",
+    "exits": {
+      "south": "King"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "U area1": {
+    "name": "Union Area 1",
+    "description": "You are at Union area 1.There are no items or entities ",
+    "roomID": "U area 1",
+    "exits": {
+      "east": "D Area2"
+    },
+    "NPC": [],
+    "items": []
+  },
+  "U area2": {
+    "name": "Union Area 2",
+    "description": "You are at Union area 2.There are no items but there is a guardian NPC",
+    "roomID": "U area 2",
+    "exits": {
+      "east": "D Area2"
+    },
+    "NPC": [
+      {
+        "name": "Guardian NPC",
+        "description": "A towering sentinel powered by forgotten cores, awaiting the chosen bearer of the three subway keys. Friendly unless threatened, it opens the escape only to those who prove themselves",
+        "friendly": true,
+        "size": "big"
+      }
+    ],
+    "items": []
   }
-
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
+}
