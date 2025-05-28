@@ -13,7 +13,8 @@
     "description": "You are now at Sheppard Yonge, explore the area and see what you can find. If you want to exit left go east. If you want to exit south, you go to York Mills station",
     "exits": {
       "south": "York Mills",
-      "east": "SY area1"
+      "east": "SY area1",
+      "north": "Finch Station"
     },
     "NPC": [],
     "items": []
@@ -22,8 +23,9 @@
     "name": "Sheppard Yonge Area 1",
     "description": "You are in Sheppard Yonge area 1. There are no entities however there is a pocket Knife ",
     "exits": {
-      "west": "SY Area2",
-      "south": "SY Area3"
+      "east": "SY Area2",
+      "south": "SY Area3",
+      "west": "Sheppard Yonge"
     },
     "NPC": [],
     "items": [
