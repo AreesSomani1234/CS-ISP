@@ -30,6 +30,11 @@ public class Player {
 
     public void setCurrentRoomId(String roomId) {
         this.currentRoomId = roomId;
+        if(currentRoomId.equals("DM Area2") || currentRoomId.equals("YM area 3") || currentRoomId.equals("BY Area 3"))
+        {
+            System.out.println("You got a key");
+            keyCount++;
+        }
     }
 
     public void addItem(Item item) {
@@ -46,11 +51,6 @@ public class Player {
 
     public void updatePlayerStrength(int val) {
         playerStrength += val;
-    }
-
-    public void GivePlayerKey() {
-        System.out.println("You got a key");
-        keyCount++;
     }
 
     public int GetKeyCount() {
