@@ -4,7 +4,9 @@
       "description": "You are starting at Finch station don't be scared to explore other stations aswell. Good luck!",
       "exits": {
         "south": "Sheppard Yonge"
-      }
+      },
+            "NPC": [],
+      "items":[]
     },
       
 
@@ -14,7 +16,9 @@
           "exits": {
             "south": "York Mills",
             "east": "SY area2"
-        } 
+        } ,
+              "NPC": [],
+      "items":[]
       }
       ,
 
@@ -26,8 +30,9 @@
             "west": "SY Area2",
             "south": "SY Area3"
         },
+        "NPC": [],
         
-        "Items": [{
+        "items": [{
           "id": "Pocket Knife",
           "name": "Pocket Knife",
           "description": "The pocket knife at Sheppard Yonge station helps you cut things and help open tightly packed stuff. It also helps you kill animals if you do not have access to the sword yet but will deal less damage..",
@@ -72,7 +77,9 @@
           "exits": {
             "east": "Leslie",
             "west": "Sheppard Yonge"
-        }
+        },
+              "NPC": [],
+      "items":[]
       }
       ,
 
@@ -83,7 +90,9 @@
           "exits": {
             "east": "Don Mills",
             "west": "Bayview"
-        } 
+        } ,
+      "NPC": [],
+      "items":[]
       }
       ,
 
@@ -94,7 +103,9 @@
           "exits": {
             "west": "Leslie",
             "north": "DM Area1"
-        } 
+        },
+      "NPC": [],
+      "items":[]
       }
       ,
 
@@ -112,7 +123,8 @@
           "friendly": false,
           "size": "Big"
         }
-      ]
+      ],
+      "items":[]
 
       }
       ,
@@ -125,7 +137,7 @@
             "east": "DM Area1"
         },
         
-        "Items": [{
+        "items": [{
           "id": "key1",
           "name": "Key",
           "description": "A small rusty key.",
@@ -134,7 +146,8 @@
           "isKey": true,
           "keyType": 1
         }
-      ]
+      ],
+      "NPC":[]
     },
         "DM Area3":{
         "name": "Don Mills Area3",
@@ -144,7 +157,7 @@
             "east": "DM Area1"
         },
         
-        "Items": [{
+        "items": [{
           "id": "Health Potion",
           "name": "Health Potion",
           "description": "You have found a health Potion which will add 50 to your health bar. Use it wisely!",
@@ -152,7 +165,8 @@
           "weapon": false,
           "isKey": false
         }
-      ]
+      ],
+      "NPC":[]
 
         },
       
@@ -166,7 +180,9 @@
         "south": "Lawrence",
         "north": "Sheppard Yonge",
         "west": "YM Area"
-      }
+      },
+            "NPC": [],
+      "items":[]
     },
 
 
@@ -259,6 +275,9 @@
         "south": "Eglinton",
         "north": "York Mills"
       },
+      "NPC": [],
+      "items":[]
+    },
       
       "L Area1":{
         "name": "Lawrence Area1",
@@ -268,8 +287,7 @@
             "east": "Lawrence"
         },
           "NPC": [],
-      "Items":[]
-      }
+      "items":[]
       },      
       
       
@@ -290,7 +308,7 @@
           "size": "Big"
         }
       ],
-      "Items":[]
+      "items":[]
       },
 
       "L Area3":{
@@ -319,7 +337,9 @@
       "exits": {
         "south": "St Clair",
         "north": "Lawrence"
-      }
+      },
+      "NPC": [],
+      "items":[]
 
     },
 
@@ -330,6 +350,9 @@
       "exits": {
         "south": "Bloor Yonge"
       }, 
+      "NPC": [],
+      "items":[]
+    },
 
       "Bloor Yonge": {
       "name": "Bloor Yonge",
@@ -354,7 +377,7 @@
             "south": "BY Area03"
         },
           "NPC": [],
-      "Items":[]
+      "items":[]
       }, 
 
       "BY Area02":{
@@ -365,7 +388,7 @@
             "east": "BY area1"
         },
           "NPC": [],
-      "Items":[
+      "items":[
         {
           "id": "Unknown Potion",
           "name": "Unknown Potion",
@@ -384,7 +407,7 @@
             "north": "BY area1",
             "south": "BY area 4"
         },
-          "Items": [],
+          "items": [],
       "NPC":[
         {
           "name": "Spindle",
@@ -404,7 +427,7 @@
             "north": "BY area3"
         },
           "NPC": [],
-      "Items":[]
+      "items":[]
       }, 
 
       "BY Area1":{
@@ -416,7 +439,7 @@
             "north": "BY Area2"
         },
           "NPC": [],
-      "Items":[]
+      "items":[]
       }, 
 
         "BY Area2":{
@@ -434,7 +457,7 @@
           "friendly": false,
           "size": "medium"
   }],
-      "Items":[]
+      "items":[]
       }, 
         "BY Area3":{
         "name": "Bloor Yonge area 3",
@@ -482,7 +505,7 @@
             "west": "Dundas"
         },
           "NPC": [],
-      "Items":[]
+      "items":[]
       },
 
 
@@ -495,7 +518,7 @@
             "west": "D Area1"
         },
           "NPC": [],
-      "Items":[]
+      "items":[]
       },
 
   "D area3":{
@@ -512,7 +535,7 @@
           "friendly": false,
           "size": "Small"
   }],
-      "Items":[]
+      "items":[]
       },
 
     "D area4":{
@@ -523,7 +546,7 @@
             "west": "D area 3"
         },
           "NPC": [],
-      "Items":[{
+      "items":[{
           "id": "Conductor's hat",
           "name": "Conductor's hat",
           "description": "Helps you get past the gate from Dundas and Queen’s station",
@@ -549,7 +572,7 @@
         "north": "Dundas"
       },
       "NPC": [],
-      "Items":[]
+      "items":[]
     },
 
       "King": {
@@ -560,7 +583,7 @@
         "north": "Queen"
       },
       "NPC": [],
-      "Items":[]
+      "items":[]
     },
 
 
@@ -571,7 +594,7 @@
         "south": "King"
       },
       "NPC": [],
-      "Items":[]
+      "items":[]
     },
 
 
@@ -583,7 +606,7 @@
             "east": "D Area2"
         },
           "NPC": [],
-      "Items":[]
+      "items":[]
       },  
 
 
@@ -599,7 +622,8 @@
           "description": "A towering sentinel powered by forgotten cores, awaiting the chosen bearer of the three subway keys. Friendly unless threatened, it opens the escape only to those who prove themselves",
           "friendly": true,
           "size": "big"
-  }]
+  }],
+        "items":[]
       }
     }
 
