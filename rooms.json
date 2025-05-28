@@ -13,7 +13,8 @@
     "description": "You are now at Sheppard Yonge, explore the area and see what you can find. If you want to exit left go east. If you want to exit south, you go to York Mills station",
     "exits": {
       "south": "York Mills",
-      "east": "SY Area1"
+      "east": "SY area1",
+      "north": "Finch Station"
     },
     "NPC": [],
     "items": []
@@ -22,9 +23,9 @@
     "name": "Sheppard Yonge Area 1",
     "description": "You are in Sheppard Yonge area 1. There are no entities however there is a pocket Knife ",
     "exits": {
-      "east": "SY Area1",
-      "west": "Sheppard Yonge",
-      "south": "SY Area3"
+      "east": "SY Area2",
+      "south": "SY Area3",
+      "west": "Sheppard Yonge"
     },
     "NPC": [],
     "items": [
@@ -62,7 +63,7 @@
       "north": "SY Area1"
     },
     "NPC": [],
-    "items": []
+    "Items": []
   },
   "Bayview ": {
     "name": "Bayview",
@@ -174,7 +175,7 @@
       "north": "YM area4"
     },
     "NPC": [],
-    "items": []
+    "Items": []
   },
   "YM Area 2": {
     "name": "York Mills area 2",
@@ -185,7 +186,7 @@
       "west": ""
     },
     "NPC": [],
-    "items": []
+    "Items": []
   },
   "YM Area3": {
     "name": "York Mills area 3",
@@ -195,7 +196,7 @@
       "west": "YM Area"
     },
     "NPC": [],
-    "items": [
+    "Items": [
       {
         "id": "Key2",
         "name": "Key2",
@@ -216,7 +217,7 @@
       "west": "YM Area5"
     },
     "NPC": [],
-    "items": [
+    "Items": [
       {
         "id": "Sword",
         "name": "Sword",
@@ -236,7 +237,7 @@
       "east": "YM Area4"
     },
     "NPC": [],
-    "items": []
+    "Items": []
   },
   "Lawrence": {
     "name": "Lawrence Station",
