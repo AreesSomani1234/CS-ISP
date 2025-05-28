@@ -22,7 +22,8 @@
     "name": "Sheppard Yonge Area 1",
     "description": "You are in Sheppard Yonge area 1. There are no entities however there is a pocket Knife ",
     "exits": {
-      "west": "SY Area2",
+      "east": "SY Area1",
+      "west": "Sheppard Yonge",
       "south": "SY Area3"
     },
     "NPC": [],
