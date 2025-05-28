@@ -90,6 +90,7 @@
       "Don Mills":{
         "name": "Don Mills",
          "description": "You are now at Leslie go east to don mills station or west back to Bayview",
+          "roomID": "Don Mills",
           "exits": {
             "west": "Leslie",
             "north": "DM Area1"
@@ -119,6 +120,7 @@
       "DM Area2":{
         "name": "Don Mills Area2",
          "description": "You are in Don Mills area 2. There are no entities however there is a key",
+          "roomID": "DM Area2",
           "exits": {
             "east": "DM Area1"
         },
@@ -137,6 +139,7 @@
         "DM Area3":{
         "name": "Don Mills Area3",
          "description": "You are in Don Mills area 3. There is an NPC and a Health Potion",
+          "roomID": "DM Area2",
           "exits": {
             "east": "DM Area1"
         },
@@ -158,6 +161,7 @@
       "York Mills": {
       "name": "York Mills Station",
       "description": "You are now at York mills Station. You can explore and find items/ NPC's or head south to Lawrence Station",
+      "roomID": "York Mills",
       "exits": {
         "south": "Lawrence",
         "north": "Sheppard Yonge",
@@ -216,7 +220,7 @@
       "YM Area4":{
         "name": "York Mills area 4",
          "description": "You are at York Mills Area4. There are no NPC's but there is a sword",
-         "roomID": "YM area 3",
+         "roomID": "YM area 4",
           "exits": {
             "south": "YM Area1",
             "west": "YM Area5"
@@ -235,7 +239,7 @@
       "YM Area5":{
         "name": "York Mills area 5",
          "description": "You are at York Mills Area5. There are no NPC's and no items",
-         "roomID": "YM area 3",
+         "roomID": "YM area 5",
           "exits": {
             "south": "YM Area3",
             "east": "YM Area4"
@@ -250,6 +254,7 @@
       "Lawrence": {
       "name": "Lawrence Station",
       "description": "You are now at Lawrence Station. You can explore and find items or head south to Eglinton Station",
+      "roomID": "Lawrence",
       "exits": {
         "south": "Eglinton",
         "north": "York Mills"
@@ -291,7 +296,7 @@
       "L Area3":{
         "name": "Lawrence Area3",
          "description": "You are at Lawrence Area3. There is no NPC's however there is a corrupted presto card",
-         "roomID": "L Area1",
+          "roomID": "L Area3",
           "exits": {
             "east": "Lawrence"
         },
@@ -310,6 +315,7 @@
       "Eglinton": {
       "name": "Eglinton",
       "description": "You are now at Eglinton Station. Do you have the corrupted Presto card for the gate to enter St Clair Station?. If not, head back to previous stations and check for the card",
+      "roomID": "Eglinton",
       "exits": {
         "south": "St Clair",
         "north": "Lawrence"
@@ -320,6 +326,7 @@
       "St Clair": {
       "name": "St Clair",
       "description": "You are now 9at St Clair Station. You can now head south to Bloor Yonge",
+      "roomID": "St Clair",
       "exits": {
         "south": "Bloor Yonge"
       }, 
@@ -327,6 +334,7 @@
       "Bloor Yonge": {
       "name": "Bloor Yonge",
       "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+      "roomID": "Bloor Yonge",
       "exits": {
         "south": "Dundas",
         "north": "St Clair"
@@ -455,11 +463,14 @@
       "Dundas": {
       "name": "Dundas",
       "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+      "roomID": "Dundas",
       "exits": {
         "south": "Queen",
         "north": "Bloor Yonge",
         "east": "D Area1"
-      }
+      },
+      "NPC": [],
+      "Items":[]
     },
 
   "D area1":{
@@ -490,7 +501,7 @@
   "D area3":{
         "name": "Dundas area3",
          "description": "You are at Dundas area 2.There are no items but there is a Fireless Prophet ",
-         "roomID": "D Area2",
+         "roomID": "D Area3",
           "exits": {
             "east": "D Area4",
             "west": "D area 2"
@@ -529,22 +540,27 @@
 
     
 
-    "Queen": {
-      "name": "Queen",
-      "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+    "Queens": {
+      "name": "Queens",
+      "description": "You are now at Queen's Station.  There is nothing here, I recommend going to the next station",
+                "roomID": "Queens",
       "exits": {
         "south": "King",
         "north": "Dundas"
-      }
+      },
+      "NPC": [],
+      "Items":[]
     },
 
       "King": {
       "name": "King",
-      "description": "You are now at Bloor Yonge Station. The station is very big and I would recommend you explore because you never know what there is.",
+      "description": "You are now at King's Station. There is nothing here, I recommend going to the next station",
       "exits": {
         "south": "Union",
         "north": "Queen"
-      }
+      },
+      "NPC": [],
+      "Items":[]
     },
 
 
@@ -553,7 +569,9 @@
       "description": "You are now at the final station Union. Where you can escape. If you have all 3 keys, you can escape but if not access is denied.",
       "exits": {
         "south": "King"
-      }
+      },
+      "NPC": [],
+      "Items":[]
     },
 
 
@@ -583,9 +601,9 @@
           "size": "big"
   }]
       }
-    },
+    }
 
-    //Finish;
+  }
 
 
       
