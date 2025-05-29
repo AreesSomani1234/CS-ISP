@@ -132,17 +132,17 @@ case "attack":
         System.out.println("Attack what?");
     } else {
         String npcName = words[1];
-        Room currentRoom = rooms.get(player.getCurrentRoomId());
-        NPC targetNPC = null;
+        Room currentRoom1 = rooms.get(player.getCurrentRoomId());
+        NPC targetNPC = currentRoom1.getNPC();
 
-        for (NPC npc : currentRoom.getNPCs()) {
-            if (npc.getNPCname().equalsIgnoreCase(npcName)) {
-                targetNPC = npc;
-                break;
-            }
-        }
+        // for (NPC npc : currentRoom1.getNPC()) {
+        //     if (npc.getNPCname().equalsIgnoreCase(npcName)) {
+        //         targetNPC = npc;
+        //         break;
+        //     }
+        // }
 
-        if (targetNPC != null) {
+        if (targetNPC != null && targetNPC.getNPCname().equalsIgnoreCase(npcName)) { //loop above not needed, max 1 npc per room
             Item weapon = null;
             for (Item item : player.getInventory()) {
                 if (item.getWeapon()) {
@@ -153,6 +153,7 @@ case "attack":
 
             if (weapon != null) {
                 player.PlayerAttack(targetNPC, weapon);
+                targetNPC.NPCDeath();
             } else {
                 System.out.println("You have no weapon to attack with.");
             }

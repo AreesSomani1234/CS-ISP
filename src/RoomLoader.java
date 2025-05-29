@@ -41,14 +41,14 @@ public class RoomLoader {
                 }
 
                 Room room = new Room(roomId, name, description, exits, items, null, false);
-                JsonObject npcObj = roomData.getAsJsonObject("npc");
+                JsonObject npcObj = roomData.getAsJsonObject("NPC");
                 if (npcObj != null) {
                     String npcName = npcObj.get("name").getAsString();
                     boolean npcFriendly = Boolean.parseBoolean(npcObj.get("friendly").getAsString());
                     String npcdescription = npcObj.get("description").getAsString();
                     String npcSize = npcObj.get("size").getAsString();
-                    String npcID = npcObj.get("id").getAsString();
-                    NPC npc = new NPC(npcName, npcFriendly, npcdescription, npcSize, npcID);
+                    // String npcID = npcObj.get("id").getAsString();
+                    NPC npc = new NPC(npcName, npcFriendly, npcdescription, npcSize, roomId);
                     room.setNPC(npc);
                 }
                 rooms.put(roomId, room);

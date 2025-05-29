@@ -5,7 +5,6 @@
     "exits": {
       "south": "Sheppard Yonge"
     },
-    "NPC": [],
     "items": []
   },
   "Sheppard Yonge": {
@@ -16,7 +15,6 @@
       "east": "SY Area1",
       "north": "Finch Station"
     },
-    "NPC": [],
     "items": []
   },
   "SY Area1": {
@@ -27,7 +25,6 @@
       "south": "SY Area3",
       "west": "Sheppard Yonge"
     },
-    "NPC": [],
     "items": [
       {
         "id": "Pocket_Knife",
@@ -41,19 +38,19 @@
   },
   "SY Area2": {
     "name": "Sheppard Yonge Area 2",
-    "description": "You are in Sheppard Yonge area 2. There is a Grubber NPC but no items ",
+    "description": "You are in Sheppard Yonge area 2. There is a 'Grubber' NPC but no items ",
     "exits": {
       "west": "SY Area1",
       "east": "Bayview"
     },
-    "NPC": [
+    "NPC": 
       {
         "name": "Grubber",
         "description": "A skittish, mutated scavenger obsessed with shiny objects and wires. Its unfriendly and attacks by leaping and biting if cornered.",
         "friendly": false,
         "size": "Small"
       }
-    ],
+    ,
     "items":[]
   },
   "SY Area3": {
@@ -62,7 +59,6 @@
     "exits": {
       "north": "SY Area1"
     },
-    "NPC": [],
     "items": []
   },
   "Bayview ": {
@@ -72,7 +68,6 @@
       "east": "Leslie",
       "west": "Sheppard Yonge"
     },
-    "NPC": [],
     "items": []
   },
   "Leslie": {
@@ -82,7 +77,6 @@
       "east": "Don Mills",
       "west": "Bayview"
     },
-    "NPC": [],
     "items": []
   },
   "Don Mills": {
@@ -94,7 +88,6 @@
       "north": "DM Area1",
       "south": "DM Area3"
     },
-    "NPC": [],
     "items": []
   },
   "DM Area1": {
@@ -105,14 +98,14 @@
       "south": "Don Mills",
       "west": "DM Area2"
     },
-    "NPC": [
+    "NPC": 
       {
         "name": "Rattle Back",
         "description": "A deranged maintenance mech fused with wreckage and corrupted code, now guarding its key like it's sacred. Unfriendly and aggressive, it slams the ground to trigger shockwaves and charges intruders.",
         "friendly": false,
         "size": "Big"
       }
-    ],
+    ,
     "items": []
   },
   "DM Area2": {
@@ -132,8 +125,7 @@
         "isKey": true,
         "keyType": 1
       }
-    ],
-    "NPC": []
+    ]
   },
   "DM Area3": {
     "name": "Don Mills Area3",
@@ -151,8 +143,7 @@
         "weapon": false,
         "isKey": false
       }
-    ],
-    "NPC": []
+    ]
   },
   "York Mills": {
     "name": "York Mills",
@@ -163,7 +154,6 @@
       "north": "Sheppard Yonge",
       "west": "YM Area 1"
     },
-    "NPC": [],
     "items": []
   },
   "YM Area 1": {
@@ -175,7 +165,6 @@
       "west": "YM Area2",
       "north": "YM Area4"
     },
-    "NPC": [],
     "items": []
   },
   "YM Area 2": {
@@ -186,7 +175,6 @@
       "east": "YM Area1",
       "west": "YM Area3"
     },
-    "NPC": [],
     "items": []
   },
   "YM Area3": {
@@ -197,7 +185,6 @@
       "east": "YM Area2",
       "north": "YM Area5"
     },
-    "NPC": [],
     "items": [
       {
         "id": "Key2",
@@ -218,7 +205,6 @@
       "south": "YM Area1",
       "west": "YM Area5"
     },
-    "NPC": [],
     "items": [
       {
         "id": "Sword",
@@ -238,7 +224,6 @@
       "south": "YM Area3",
       "east": "YM Area4"
     },
-    "NPC": [],
     "items": []
   },
   "Lawrence": {
@@ -251,7 +236,6 @@
       "west": "L Area1",
       "east": "L Area2"
     },
-    "NPC": [],
     "items": []
   },
   "L Area1": {
@@ -261,7 +245,6 @@
     "exits": {
       "east": "Lawrence"
     },
-    "NPC": [],
     "items": []
   },
   "L Area2": {
@@ -272,14 +255,14 @@
       "east": "L Area3",
       "west": "Lawrence"
     },
-    "NPC": [
+    "NPC": 
       {
         "name": "Whisperer",
         "description": ": A cloaked being that speaks only in your own voice, revealing your worst fears. Unfriendly and uses psychic weapons that disorient and drain health.",
         "friendly": false,
         "size": "Big"
       }
-    ],
+    ,
     "items": []
   },
   "L Area3": {
@@ -289,7 +272,6 @@
     "exits": {
       "west": "Lawrence"
     },
-    "NPC": [],
     "items": [
       {
         "id": "Corrupted_Presto",
@@ -310,7 +292,6 @@
       "south": "St Clair",
       "north": "Lawrence"
     },
-    "NPC": [],
     "items": []
   },
   "St Clair": {
@@ -321,7 +302,6 @@
       "south": "Bloor Yonge",
       "north": "Eglinton"
     },
-    "NPC": [],
     "items": []
   },
   "Bloor Yonge": {
@@ -334,8 +314,7 @@
       "west": "BY Area01",
       "east": "BY Area1"
     },
-    "items": [],
-    "NPC": []
+    "items": []
   },
   "BY Area01": {
     "name": "Bloor Yonge area 01",
@@ -346,7 +325,6 @@
       "east": "Bloor Yonge",
       "south": "BY Area03"
     },
-    "NPC": [],
     "items": []
   },
   "BY Area02": {
@@ -356,7 +334,6 @@
     "exits": {
       "east": "BY Area01"
     },
-    "NPC": [],
     "items": [
       {
         "id": "Unknown Potion",
@@ -377,14 +354,13 @@
       "south": "BY Area04"
     },
     "items": [],
-    "NPC": [
+    "NPC": 
       {
         "name": "Spindle",
         "description": "An intelligent repair drone turned reclusive inventor, building silk-wire webs through the tunnels. Friendly and will restore your health if you complete a task.",
         "friendly": true,
         "size": "Medium"
       }
-    ]
   },
   "BY Area04": {
     "name": "Bloor Yonge area 04",
@@ -393,7 +369,6 @@
     "exits": {
       "north": "BY Area03"
     },
-    "NPC": [],
     "items": []
   },
   "BY Area1": {
@@ -404,7 +379,6 @@
       "west": "Bloor Yonge",
       "east": "BY Area2"
     },
-    "NPC": [],
     "items": []
   },
   "BY Area2": {
@@ -415,14 +389,13 @@
       "west": "BY Area1",
       "south": "BY Area3"
     },
-    "NPC": [
+    "NPC": 
       {
         "name": "Trackwalk",
         "description": "A spectral figure doomed to walk its patrol forever after a failed rescue mission. It’s unfriendly and violently attacks with electrified limbs if anyone blocks its route or approaches the key.",
         "friendly": false,
         "size": "medium"
-      }
-    ],
+      },
     "items": []
   },
   "BY Area3": {
@@ -432,8 +405,7 @@
     "exits": {
       "north": "BY Area2"
     },
-    "NPC": [
-      {
+    "items": [{
         "id": "Key3",
         "name": "Key3",
         "description": "Will randomize that potion that you can acquire",
@@ -441,9 +413,7 @@
         "weapon": false,
         "isKey": false,
         "keyType": 3
-      }
-    ],
-    "items": []
+      }]
   },
   "Dundas": {
     "name": "Dundas",
@@ -454,7 +424,6 @@
       "north": "Bloor Yonge",
       "east": "D Area1"
     },
-    "NPC": [],
     "items": []
   },
   "D Area1": {
@@ -465,7 +434,6 @@
       "east": "D Area2",
       "west": "Dundas"
     },
-    "NPC": [],
     "items": []
   },
   "D Area2": {
@@ -476,7 +444,6 @@
       "east": "D Area3",
       "west": "D Area1"
     },
-    "NPC": [],
     "items": []
   },
   "D Area3": {
@@ -487,14 +454,13 @@
       "east": "D Area4",
       "west": "D Area2"
     },
-    "NPC": [
+    "NPC": 
       {
         "name": "Fireless Prophet",
         "description": "A scorched zealot of the old flame, now preaching cold salvation beneath flickering lights. Unfriendly and casts sparks of static energy through his sword when interrupted.",
         "friendly": false,
         "size": "Small"
-      }
-    ],
+      },
     "items": []
   },
   "D Area4": {
@@ -504,7 +470,6 @@
     "exits": {
       "west": "D Area3"
     },
-    "NPC": [],
     "items": [
       {
         "id": "Conductor's hat",
@@ -525,7 +490,6 @@
       "south": "King",
       "north": "Dundas"
     },
-    "NPC": [],
     "items": []
   },
   "King": {
@@ -535,7 +499,6 @@
       "south": "Union",
       "north": "Queen"
     },
-    "NPC": [],
     "items": []
   },
   "Union": {
@@ -545,7 +508,6 @@
       "north": "King",
       "east": "U Area1"
     },
-    "NPC": [],
     "items": []
   },
   "U Area1": {
@@ -556,7 +518,6 @@
       "east": "U Area2",
       "west": "Union"
     },
-    "NPC": [],
     "items": []
   },
   "U Area2": {
@@ -566,14 +527,13 @@
     "exits": {
       "west": "D Area1"
     },
-    "NPC": [
+    "NPC": 
       {
         "name": "Guardian NPC",
         "description": "A towering sentinel powered by forgotten cores, awaiting the chosen bearer of the three subway keys. Friendly unless threatened, it opens the escape only to those who prove themselves",
         "friendly": true,
         "size": "big"
-      }
-    ],
+      },
     "items": []
   }
 }
