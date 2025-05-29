@@ -95,6 +95,7 @@ public class Player {
         if (playerStrength > 0) {
             System.out.println("you are attacking the " + npc.getNPCname() + " with your weapon");
             npc.NPCDeath();
+            System.out.println("*");
         }
     }
 

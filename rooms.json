@@ -2,6 +2,7 @@
   "Finch Station": {
     "name": "Finch Station",
     "description": "You are starting at Finch station don't be scared to explore other stations aswell. Good luck!",
+    "roomID": "Finxh Station",
     "exits": {
       "south": "Sheppard Yonge"
     },
@@ -10,6 +11,7 @@
   "Sheppard Yonge": {
     "name": "Sheppard Yonge",
     "description": "You are now at Sheppard Yonge, explore the area and see what you can find. If you want to exit left go east. If you want to exit south, you go to York Mills station",
+    "roomID": "Sheppard Yonge",
     "exits": {
       "south": "York Mills",
       "east": "SY Area1",
@@ -20,6 +22,7 @@
   "SY Area1": {
     "name": "Sheppard Yonge Area 1",
     "description": "You are in Sheppard Yonge area 1. There are no entities however there is a pocket Knife ",
+    "roomID": "SY Area1",
     "exits": {
       "east": "SY Area2",
       "south": "SY Area3",
@@ -39,6 +42,7 @@
   "SY Area2": {
     "name": "Sheppard Yonge Area 2",
     "description": "You are in Sheppard Yonge area 2. There is a 'Grubber' NPC but no items ",
+    "roomID": "SY Area2",
     "exits": {
       "west": "SY Area1",
       "east": "Bayview"
@@ -56,6 +60,7 @@
   "SY Area3": {
     "name": "Sheppard Yonge Area 3",
     "description": "You are in Sheppard Yonge area 3. There are no entities of items ",
+    "roomID": "SY Area3",
     "exits": {
       "north": "SY Area1"
     },
@@ -64,6 +69,7 @@
   "Bayview ": {
     "name": "Bayview",
     "description": "You are at Bayview Station, head west to Leslie or go East ",
+    "roomID": "Bayview",
     "exits": {
       "east": "Leslie",
       "west": "Sheppard Yonge"
@@ -73,6 +79,7 @@
   "Leslie": {
     "name": "Leslie",
     "description": "You are now at Leslie go east to don mills station or west back to Bayview",
+    "roomID": "Leslie",
     "exits": {
       "east": "Don Mills",
       "west": "Bayview"

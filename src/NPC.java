@@ -8,9 +8,11 @@ public class NPC {
     private int attackPower;
     private String RoomID;
     private boolean living;
+    private Room room;
 
-    public NPC(String name, boolean friendly, String description, String size, String RoomID){
+    public NPC(String name, boolean friendly, String description, String size, String RoomID, Room room){
         this.RoomID = RoomID;
+        this.room = room;
         this.name = name;
         this.friendly = friendly;
         this.description = description; //description about general behavior
@@ -68,6 +70,7 @@ public class NPC {
     }
     public void NPCDeath(){
         living = false;
+        room.setNPC(null);
         System.out.println(getNPCname() + " is dead!");
     }
 }

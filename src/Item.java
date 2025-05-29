@@ -13,6 +13,7 @@ public class Item {
         this.name = name;
         this.description = description;
         this.consumable = consumable;
+        this.weapon = weapon;
         weight = 5;
         if(consumable){
             strength = 0;

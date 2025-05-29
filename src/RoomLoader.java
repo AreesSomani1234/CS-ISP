@@ -48,7 +48,7 @@ public class RoomLoader {
                     String npcdescription = npcObj.get("description").getAsString();
                     String npcSize = npcObj.get("size").getAsString();
                     // String npcID = npcObj.get("id").getAsString();
-                    NPC npc = new NPC(npcName, npcFriendly, npcdescription, npcSize, roomId);
+                    NPC npc = new NPC(npcName, npcFriendly, npcdescription, npcSize, roomId, room);
                     room.setNPC(npc);
                 }
                 rooms.put(roomId, room);

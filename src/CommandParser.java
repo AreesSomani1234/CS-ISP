@@ -147,13 +147,13 @@ case "attack":
             for (Item item : player.getInventory()) {
                 if (item.getWeapon()) {
                     weapon = item;
+                    item.useItem(player);
                     break;
                 }
             }
 
             if (weapon != null) {
                 player.PlayerAttack(targetNPC, weapon);
-                targetNPC.NPCDeath();
             } else {
                 System.out.println("You have no weapon to attack with.");
             }
