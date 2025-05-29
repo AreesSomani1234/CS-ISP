@@ -401,7 +401,7 @@
         "name": "Trackwalk",
         "description": "A spectral figure doomed to walk its patrol forever after a failed rescue mission. It’s unfriendly and violently attacks with electrified limbs if anyone blocks its route or approaches the key.",
         "friendly": false,
-        "size": "medium"
+        "size": "Medium"
       },
     "items": []
   },

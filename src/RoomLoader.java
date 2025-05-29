@@ -44,7 +44,7 @@ public class RoomLoader {
                 JsonObject npcObj = roomData.getAsJsonObject("NPC");
                 if (npcObj != null) {
                     String npcName = npcObj.get("name").getAsString();
-                    boolean npcFriendly = Boolean.parseBoolean(npcObj.get("friendly").getAsString());
+                    boolean npcFriendly = npcObj.get("friendly").getAsBoolean();
                     String npcdescription = npcObj.get("description").getAsString();
                     String npcSize = npcObj.get("size").getAsString();
                     // String npcID = npcObj.get("id").getAsString();

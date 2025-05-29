@@ -1,4 +1,3 @@
-
 public class NPC {
     private String name;
     private int health;
@@ -20,17 +19,17 @@ public class NPC {
         living = true;
         if (!friendly) //because friendly don't attack
         {
-            if(size.equals("big")){
-                health = (int) ((Math.random()* 26)+75);
-                attackPower = (int) ((Math.random()* 26)-50);
+            if(size.equals("Big")){
+                this.health = (int) ((Math.random()* 26)+75);
+                this.attackPower = (int) ((Math.random()* 26)+20); //20-45 damage
             }
-            else if(size.equals("medium")){
-                health = (int) ((Math.random()* 35)+40);
-                attackPower = (int) ((Math.random()* 11)-20);
+            else if(size.equals("Medium")){
+                this.health = (int) ((Math.random()* 35)+40);
+                this.attackPower = (int) ((Math.random()* 11)+20); // 20-30 damage
             }
-            else if(size.equals("small")){
-                health = (int) ((Math.random()* 30)+10);
-                attackPower = (int) ((Math.random()* 10)-11);
+            else if(size.equals("Small")){
+                this.health = (int) ((Math.random()* 30)+10);
+                this.attackPower = (int) ((Math.random()* 11)+10); // 10-20 damage
             }
             else //Buffer if non valid input
             { 
@@ -62,9 +61,9 @@ public class NPC {
     }
     public void NPCAttack(Player player){
         if((player.getCurrentRoomId().equals(getNPCRoomID())) && living) {
-            System.out.println("The " + getNPCname() + "is attacking you!" );
-            player.updatePlayerHealth(getattackPower());
-            System.out.println("You lost: " + getattackPower() + "health points");
+            System.out.println("The " + getNPCname() + " is attacking you!" );
+            player.playerHit(attackPower);
+            System.out.println("You lost: " + getattackPower() + " health points");
             System.out.println("Your current health is: " + player.getPlayerHealth());
         }
     }

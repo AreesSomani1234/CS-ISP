@@ -23,6 +23,10 @@ public class CommandParser {
                         System.out.println("You move " + direction + ".");
                         currentRoom = rooms.get(player.getCurrentRoomId());
                         System.out.println(currentRoom.getLongDescription());
+                        NPC npc = currentRoom.getNPC();
+                        if(currentRoom.getNPC() != null && nextRoomId.equals(npc.getNPCRoomID())){
+                            npc.NPCAttack(player);
+                        }
 
                     } else {
                         System.out.println("You can't go that way.");

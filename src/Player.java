@@ -52,6 +52,9 @@ public class Player {
     public void updatePlayerStrength(int val) {
         playerStrength += val;
     }
+    public void playerHit(int num){
+        playerHealth -= num; 
+    }
 
     public int GetKeyCount() {
         return keyCount;
@@ -95,7 +98,6 @@ public class Player {
         if (playerStrength > 0) {
             System.out.println("you are attacking the " + npc.getNPCname() + " with your weapon");
             npc.NPCDeath();
-            System.out.println("*");
         }
     }
 
