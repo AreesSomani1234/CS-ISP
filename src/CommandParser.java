@@ -126,6 +126,43 @@ case "use":
     }
     return false;
 
+                
+case "attack":
+    if (words.length < 2) {
+        System.out.println("Attack what?");
+    } else {
+        String npcName = words[1];
+        Room currentRoom = rooms.get(player.getCurrentRoomId());
+        NPC targetNPC = null;
+
+        for (NPC npc : currentRoom.getNPCs()) {
+            if (npc.getNPCname().equalsIgnoreCase(npcName)) {
+                targetNPC = npc;
+                break;
+            }
+        }
+
+        if (targetNPC != null) {
+            Item weapon = null;
+            for (Item item : player.getInventory()) {
+                if (item.getWeapon()) {
+                    weapon = item;
+                    break;
+                }
+            }
+
+            if (weapon != null) {
+                player.PlayerAttack(targetNPC, weapon);
+            } else {
+                System.out.println("You have no weapon to attack with.");
+            }
+        } else {
+            System.out.println("There is no " + npcName + " here.");
+        }
+    }
+    return false;
+
+
             default:
                 System.out.println("I don't understand that command.");
                 return false;
