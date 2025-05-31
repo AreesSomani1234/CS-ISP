@@ -20,6 +20,24 @@ public class CommandParser {
                     String nextRoomId = currentRoom.getExits().get(direction);
                     if (nextRoomId != null) {
                         Room nextRoom = rooms.get(nextRoomId);
+                        // if (currentRoom.getId().equals("escape")) {
+                        //     return true;
+                        // }
+                        if (currentRoom.getId().equals("U Area2") && nextRoom.getId().equals("escape")) {
+                            int count = 0;
+                            for (Item i : player.getInventory()) {
+                                if (i instanceof RoomKey) {
+                                    RoomKey rk = (RoomKey) i;
+                                    int keyNum = rk.GetExitKeyNumber();
+                                    if (keyNum == 2 || keyNum == 3 || keyNum == 4) {
+                                        count++;
+                                    }
+                                }
+                            }
+                            if (count == 3) {
+                                nextRoom.setLocked(false,nextRoom.type()); //  Unlock the escape room
+                            }
+                        }
                         if (nextRoom.isLocked()) {
                             boolean hasKey = false;
                             for (Item i : player.getInventory()) {
@@ -181,16 +199,15 @@ public class CommandParser {
             case "health": // gets health of player
                 System.out.println("Your current Health is: " + player.getPlayerHealth());
                 return false;
-            
+
             case "strength": // gets strength of player
                 System.out.println("Your current strength is: " + player.getPlayerStrength());
                 return false;
-            
 
             default:
                 System.out.println("I don't understand that command.");
                 return false;
         }
-        return false; //idk
+        return false; // idk
     }
 }

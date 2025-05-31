@@ -25,10 +25,22 @@ public class Game {
         System.out.println(currentRoom.getLongDescription());
         boolean gameOver = false;
         while (!gameOver) {
- 
+            Room currentRoomNow = rooms.get(player.getCurrentRoomId());
+            
+            if(player.getPlayerHealth()<= 0){
+                System.out.println("You lost!, Your died");
+                gameOver = true;
+                break;
+            }
+            if (currentRoomNow.getId().equals("escape")) {
+                System.out.println("You win! You completed Stuck in the TTC");
+                gameOver = true;
+                break;
+            }
             System.out.print("> ");
             String input = scanner.nextLine();
             commandParser.parse(input, player, rooms);
         }
+
     }
 }
