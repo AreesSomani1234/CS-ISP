@@ -23,18 +23,12 @@ public class Player {
     public int getPlayerHealth() {
         return playerHealth;
     }
+    public int getPlayerStrength(){
+        return playerStrength;
+    }
 
     public String getCurrentRoomId() {
         return currentRoomId;
-    }
-
-    public void setCurrentRoomId(String roomId) {
-        this.currentRoomId = roomId;
-        if(currentRoomId.equals("DM Area2") || currentRoomId.equals("YM area 3") || currentRoomId.equals("BY Area 3"))
-        {
-            System.out.println("You got a key");
-            keyCount++;
-        }
     }
 
     public void addItem(Item item) {
@@ -52,12 +46,28 @@ public class Player {
     public void updatePlayerStrength(int val) {
         playerStrength += val;
     }
-    public void playerHit(int num){
-        playerHealth -= num; 
+
+    public void playerHit(int num) {
+        playerHealth -= num;
     }
 
     public int GetKeyCount() {
         return keyCount;
+    }
+
+    public boolean canEnter(Room room) {
+        if (!room.isLocked()) {
+            return true;
+        }
+        for (Item i : inventory) {
+            if (i instanceof RoomKey) {
+                RoomKey key = (RoomKey) i;
+                if (key.GetExitKeyNumber() == room.type()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public int inventoryWeight() { // -Arees-gets the weight of the inventory
@@ -76,7 +86,7 @@ public class Player {
         if (inventoryWeight() > maxWeight) {
             for (int i = playerInventory.size() - 1; i >= 0; i--) {
                 Item item = playerInventory.get(i);
-                if(!(item instanceof RoomKey)){
+                if (!(item instanceof RoomKey)) {
                     playerInventory.remove(i);
                     break; // breaks the loop so that more than 1 item isnt removed
                 }
@@ -92,6 +102,55 @@ public class Player {
         }
 
         System.out.println("Your health is: " + playerHealth);
+    }
+
+    public void setCurrentRoomId(String RoomId) {
+        this.currentRoomId = RoomId;
+    }
+
+    public int playerExitKeyCount() { // return player exit key count-Arees
+        int exitKeyCount = 0;
+        List<Item> Playerinventory = getInventory();
+        for (Item i : Playerinventory) {
+            if (i instanceof RoomKey) {
+                RoomKey rk = (RoomKey) i;
+                int keyNum = rk.GetExitKeyNumber();
+                if (keyNum == 2 || keyNum == 3 || keyNum == 4) {
+                    exitKeyCount++;
+                }
+            }
+        }
+        return exitKeyCount;
+    }
+
+    public int playerStClairKeyCheck() { // return player StClair key count-Arees
+        int STCKeyCount = 0;
+        List<Item> Playerinventory = getInventory();
+        for (Item i : Playerinventory) {
+            if (i instanceof RoomKey) {
+                RoomKey rk = (RoomKey) i;
+                int keyNum = rk.GetExitKeyNumber();
+                if (keyNum == 0) {
+                    STCKeyCount++;
+                }
+            }
+        }
+        return STCKeyCount;
+    }
+
+    public int playerQueenCheck() { // return player queen key count-Arees
+        int QueenKeyCount = 0;
+        List<Item> Playerinventory = getInventory();
+        for (Item i : Playerinventory) {
+            if (i instanceof RoomKey) {
+                RoomKey rk = (RoomKey) i;
+                int keyNum = rk.GetExitKeyNumber();
+                if (keyNum == 0) {
+                    QueenKeyCount++;
+                }
+            }
+        }
+        return QueenKeyCount;
     }
 
     public void PlayerAttack(NPC npc, Item item) {
@@ -111,12 +170,8 @@ public class Player {
         List<Item> playerInventory = getInventory();
         for (int i = playerInventory.size() - 1; i >= 0; i--) {
                 Item item = playerInventory.get(i);
-                if(item instanceof RoomKey){
-                    RoomKey rk = (RoomKey) item; // downcast to access child methods
-                    int keyNum = rk.GetExitKeyNumber();
-                    if (keyNum == 1 || keyNum == 2 || keyNum == 3){
-                        keyCount++;
-                    }
+                if(item instanceof RoomKey){ //Add another argument to check if its a exit key
+                    keyCount++;
                 }
             }
         if (keyCount == REQUIRED_EXIT_KEYS) {

@@ -19,12 +19,29 @@ public class CommandParser {
                     Room currentRoom = rooms.get(player.getCurrentRoomId());
                     String nextRoomId = currentRoom.getExits().get(direction);
                     if (nextRoomId != null) {
+                        Room nextRoom = rooms.get(nextRoomId);
+                        if (nextRoom.isLocked()) {
+                            boolean hasKey = false;
+                            for (Item i : player.getInventory()) {
+                                if (i instanceof RoomKey) {
+                                    RoomKey rk = (RoomKey) i;
+                                    if (rk.GetExitKeyNumber() == nextRoom.type()) {
+                                        hasKey = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (!hasKey) {
+                                System.out.println("The door is locked. You need a specific key to enter.");
+                                break;
+                            }
+                        }
                         player.setCurrentRoomId(nextRoomId);
                         System.out.println("You move " + direction + ".");
                         currentRoom = rooms.get(player.getCurrentRoomId());
                         System.out.println(currentRoom.getLongDescription());
                         NPC npc = currentRoom.getNPC();
-                        if(currentRoom.getNPC() != null && nextRoomId.equals(npc.getNPCRoomID())){
+                        if (currentRoom.getNPC() != null && nextRoomId.equals(npc.getNPCRoomID())) {
                             npc.NPCAttack(player);
                         }
 
@@ -55,6 +72,7 @@ public class CommandParser {
                     Room room = rooms.get(player.getCurrentRoomId());
                     Item itemToTake = null;
                     for (Item item : room.getItems()) {
+
                         if (item.getName().equalsIgnoreCase(itemName)) {
                             itemToTake = item;
                             break;
@@ -92,85 +110,87 @@ public class CommandParser {
                 }
                 return false;
             case "help":
-                System.out.println("Available commands: go [direction], look, take [item], drop [item], inventory, help");
+                System.out
+                        .println("Available commands: go [direction], look, take [item], drop [item], inventory, help");
                 return false;
             case "quit":
                 System.out.println("good game");
                 return true;
 
-case "use":
-    if (words.length < 2) {
-        System.out.println("Use what?");
-    } 
-    else {
-        String itemName = words[1];
-        Item itemToUse = null;
-        for (Item item : player.getInventory()) {
-            if (item.getName().equalsIgnoreCase(itemName)) {
-                itemToUse = item;
-                break;
-            }
-        }
-        if (itemToUse != null) {
-            if (itemToUse.getConsumable()) {
-                System.out.println("You consume the " + itemToUse.getName() + ".");
-                itemToUse.useItem(player);
-                player.removeItem(itemToUse);
-            } else if (itemToUse.getWeapon()) {
-                System.out.println("You equip the " + itemToUse.getName() + ".");
-                System.out.println("Your strength increases by " + itemToUse.getStrength() + " points.");
-                itemToUse.useItem(player);
-            } else {
-                System.out.println("You can't use the " + itemToUse.getName() + " that way.");
-                System.out.println(itemToUse.getDescription());
-            }
-        } else {
-            System.out.println("You don't have " + itemName + ".");
-        }
-    }
-    return false;
-
-                
-case "attack":
-    if (words.length < 2) {
-        System.out.println("Attack what?");
-    } else {
-        String npcName = words[1];
-        Room currentRoom1 = rooms.get(player.getCurrentRoomId());
-        NPC targetNPC = currentRoom1.getNPC();
-
-        // for (NPC npc : currentRoom1.getNPC()) {
-        //     if (npc.getNPCname().equalsIgnoreCase(npcName)) {
-        //         targetNPC = npc;
-        //         break;
-        //     }
-        // }
-
-        if (targetNPC != null && targetNPC.getNPCname().equalsIgnoreCase(npcName)) { //loop above not needed, max 1 npc per room
-            Item weapon = null;
-            for (Item item : player.getInventory()) {
-                if (item.getWeapon()) {
-                    weapon = item;
-                    item.useItem(player);
-                    break;
+            case "use":
+                if (words.length < 2) {
+                    System.out.println("Use what?");
+                } else {
+                    String itemName = words[1];
+                    Item itemToUse = null;
+                    for (Item item : player.getInventory()) {
+                        if (item.getName().equalsIgnoreCase(itemName)) {
+                            itemToUse = item;
+                            break;
+                        }
+                    }
+                    if (itemToUse != null) {
+                        if (itemToUse.getConsumable()) {
+                            System.out.println("You consume the " + itemToUse.getName() + ".");
+                            itemToUse.useItem(player);
+                            player.removeItem(itemToUse);
+                        } else if (itemToUse.getWeapon()) {
+                            System.out.println("You equip the " + itemToUse.getName() + ".");
+                            System.out.println("Your strength increases by " + itemToUse.getStrength() + " points.");
+                            itemToUse.useItem(player);
+                        } else {
+                            System.out.println("You can't use the " + itemToUse.getName() + " that way.");
+                            System.out.println(itemToUse.getDescription());
+                        }
+                    } else {
+                        System.out.println("You don't have " + itemName + ".");
+                    }
                 }
-            }
+                return false;
 
-            if (weapon != null) {
-                player.PlayerAttack(targetNPC, weapon);
-            } else {
-                System.out.println("You have no weapon to attack with.");
-            }
-        } else {
-            System.out.println("There is no " + npcName + " here.");
-        }
-    }
-    return false;
+            case "attack":
+                if (words.length < 2) {
+                    System.out.println("Attack what?");
+                } else {
+                    String npcName = words[1];
+                    Room currentRoom1 = rooms.get(player.getCurrentRoomId());
+                    NPC targetNPC = currentRoom1.getNPC();
+                    if (targetNPC != null && targetNPC.getNPCname().equalsIgnoreCase(npcName)) { // loop above not
+                                                                                                 // needed, max 1 npc
+                                                                                                 // per room
+                        Item weapon = null;
+                        for (Item item : player.getInventory()) {
+                            if (item.getWeapon()) {
+                                weapon = item;
+                                item.useItem(player);
+                                break;
+                            }
+                        }
 
+                        if (weapon != null) {
+                            player.PlayerAttack(targetNPC, weapon);
+                        } else {
+                            System.out.println("You have no weapon to attack with.");
+                        }
+                    } else {
+                        System.out.println("There is no " + npcName + " here.");
+                    }
+                }
+                return false;
+
+            case "health": // gets health of player
+                System.out.println("Your current Health is: " + player.getPlayerHealth());
+                return false;
+            
+            case "strength": // gets strength of player
+                System.out.println("Your current strength is: " + player.getPlayerStrength());
+                return false;
+            
 
             default:
                 System.out.println("I don't understand that command.");
                 return false;
         }
+        return false; //idk
     }
 }

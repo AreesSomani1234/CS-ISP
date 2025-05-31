@@ -15,6 +15,8 @@ public class RoomLoader {
 
                 String name = roomData.get("name").getAsString();
                 String description = roomData.get("description").getAsString();
+                boolean locked = roomData.get("locked").getAsBoolean();
+                int ktype = roomData.get("keytype").getAsInt();
 
                 Map<String, String> exits = new HashMap<>();
                 JsonObject exitsJson = roomData.getAsJsonObject("exits");
@@ -40,7 +42,7 @@ public class RoomLoader {
                     }
                 }
 
-                Room room = new Room(roomId, name, description, exits, items, null, false);
+                Room room = new Room(roomId, name, description, exits, items, null, locked, ktype);
                 JsonObject npcObj = roomData.getAsJsonObject("NPC");
                 if (npcObj != null) {
                     String npcName = npcObj.get("name").getAsString();
