@@ -160,25 +160,27 @@ public class Player {
         }
     }
 
-    // public boolean CheckWin(Room currentRoom, NPC guardian) {
-    // if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
-    // return false;
-    // }
-    // if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian"))
-    // {
-    // return false;
-    // }
-    // List<Item> playerInventory = getInventory();
-    // for (int i = playerInventory.size() - 1; i >= 0; i--) {
-    // Item item = playerInventory.get(i);
-    // if (item instanceof RoomKey) { // Add another argument to check if its a exit
-    // key
-    // keyCount++;
-    // }
-    // }
-    // if (keyCount == REQUIRED_EXIT_KEYS) {
-    // return true;
-    // }
-    // return false;
-    // }
+    public boolean CheckWin(Room currentRoom, NPC guardian) {
+        if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
+            return false;
+        }
+        if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian")) {
+            return false;
+        }
+        List<Item> playerInventory = getInventory();
+        for (int i = playerInventory.size() - 1; i >= 0; i--) {
+                Item item = playerInventory.get(i);
+                if(item instanceof RoomKey){
+                    RoomKey rk = (RoomKey) item; // downcast to access child methods
+                    int keyNum = rk.GetExitKeyNumber();
+                    if (keyNum == 1 || keyNum == 2 || keyNum == 3){
+                        keyCount++;
+                    }
+                }
+            }
+        if (keyCount == REQUIRED_EXIT_KEYS) {
+            return true;
+        }
+        return false;
+    }
 }
