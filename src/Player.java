@@ -23,6 +23,9 @@ public class Player {
     public int getPlayerHealth() {
         return playerHealth;
     }
+    public int getPlayerStrength(){
+        return playerStrength;
+    }
 
     public String getCurrentRoomId() {
         return currentRoomId;

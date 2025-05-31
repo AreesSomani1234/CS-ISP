@@ -155,14 +155,6 @@ public class CommandParser {
                     String npcName = words[1];
                     Room currentRoom1 = rooms.get(player.getCurrentRoomId());
                     NPC targetNPC = currentRoom1.getNPC();
-
-                    // for (NPC npc : currentRoom1.getNPC()) {
-                    // if (npc.getNPCname().equalsIgnoreCase(npcName)) {
-                    // targetNPC = npc;
-                    // break;
-                    // }
-                    // }
-
                     if (targetNPC != null && targetNPC.getNPCname().equalsIgnoreCase(npcName)) { // loop above not
                                                                                                  // needed, max 1 npc
                                                                                                  // per room
@@ -185,6 +177,15 @@ public class CommandParser {
                     }
                 }
                 return false;
+
+            case "health": // gets health of player
+                System.out.println("Your current Health is: " + player.getPlayerHealth());
+                return false;
+            
+            case "strength": // gets strength of player
+                System.out.println("Your current strength is: " + player.getPlayerStrength());
+                return false;
+            
 
             default:
                 System.out.println("I don't understand that command.");
