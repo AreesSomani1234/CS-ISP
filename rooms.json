@@ -125,12 +125,12 @@
     "items": [
       {
         "id": "key1",
-        "name": "Key",
+        "name": "Key1",
         "description": "A small rusty key.",
         "consumable": false,
         "weapon": false,
         "isKey": true,
-        "keyType": 1
+        "keyType": 2
       }
     ]
   },
@@ -159,11 +159,11 @@
     "exits": {
       "south": "Lawrence",
       "north": "Sheppard Yonge",
-      "west": "YM Area 1"
+      "west": "YM Area1"
     },
     "items": []
   },
-  "YM Area 1": {
+  "YM Area1": {
     "name": "York Mills Area1",
     "description": "You are at York Mills area 1. There are no entities or NPC's",
     "roomID": "YM Area1",
@@ -174,10 +174,10 @@
     },
     "items": []
   },
-  "YM Area 2": {
-    "name": "York Mills area 2",
+  "YM Area2": {
+    "name": "York Mills Area 2",
     "description": "You are at York Mills Area2. There are no NPC's and no items",
-    "roomID": "YM area 2",
+    "roomID": "YM Area 2",
     "exits": {
       "east": "YM Area1",
       "west": "YM Area3"
@@ -200,7 +200,7 @@
         "consumable": false,
         "weapon": false,
         "isKey": true,
-        "keyType": 2
+        "keyType": 3
       }
     ]
   },
@@ -287,7 +287,7 @@
         "consumable": false,
         "weapon": false,
         "isKey": true,
-        "stClairEnteranceKey": true
+        "keyType": 0
       }
     ]
   },
@@ -416,10 +416,10 @@
         "id": "Key3",
         "name": "Key3",
         "description": "Will randomize that potion that you can acquire",
-        "consumable": true,
+        "consumable": false,
         "weapon": false,
-        "isKey": false,
-        "keyType": 3
+        "isKey": true,
+        "keyType": 4
       }]
   },
   "Dundas": {
@@ -485,7 +485,7 @@
         "consumable": true,
         "weapon": false,
         "isKey": true,
-        "queenEnteranceKey": true
+        "keyType": 1
       }
     ]
   },
@@ -532,6 +532,7 @@
     "description": "You are at Union area 2.There are no items but there is a guardian NPC",
     "roomID": "U Area 2",
     "exits": {
+      "east": "escape",
       "west": "D Area1"
     },
     "NPC": 
@@ -541,6 +542,15 @@
         "friendly": true,
         "size": "big"
       },
+    "items": []
+  },
+    "escape": {
+    "name": "escape",
+    "description": "Are you in the afterlife? or are you in the escape room?",
+    "roomID": "escape",
+    "exits": {
+      "west": "U Area2"
+    },
     "items": []
   }
 }

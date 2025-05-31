@@ -90,8 +90,49 @@ public class Player {
         this.currentRoomId = RoomId;
     }
 
-    {
+    public int playerExitKeyCount() { //return player exit key count-Arees
+        int exitKeyCount = 0;
+        List<Item> Playerinventory = getInventory();
+        for (Item i : Playerinventory) {
+            if (i instanceof RoomKey) {
+                RoomKey rk = (RoomKey) i;
+                int keyNum = rk.GetExitKeyNumber();
+                if (keyNum == 2 || keyNum == 3 || keyNum == 4) {
+                    exitKeyCount++;
+                }
+            }
+        }
+        return exitKeyCount;
+    }
 
+    public int playerStClairKeyCheck() { //return player StClair key count-Arees
+        int STCKeyCount = 0;
+        List<Item> Playerinventory = getInventory();
+        for (Item i : Playerinventory) {
+            if (i instanceof RoomKey) {
+                RoomKey rk = (RoomKey) i;
+                int keyNum = rk.GetExitKeyNumber();
+                if (keyNum == 0) {
+                    STCKeyCount++;
+                }
+            }
+        }
+        return STCKeyCount;
+    }
+
+    public int playerQueenCheck() { //return player queen key count-Arees
+        int QueenKeyCount = 0;
+        List<Item> Playerinventory = getInventory();
+        for (Item i : Playerinventory) {
+            if (i instanceof RoomKey) {
+                RoomKey rk = (RoomKey) i;
+                int keyNum = rk.GetExitKeyNumber();
+                if (keyNum == 0) {
+                    QueenKeyCount++;
+                }
+            }
+        }
+        return QueenKeyCount;
     }
 
     public void PlayerAttack(NPC npc, Item item) {
@@ -101,23 +142,23 @@ public class Player {
         }
     }
 
-    public boolean CheckWin(Room currentRoom, NPC guardian) {
-        if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
-            return false;
-        }
-        if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian")) {
-            return false;
-        }
-        List<Item> playerInventory = getInventory();
-        for (int i = playerInventory.size() - 1; i >= 0; i--) {
-                Item item = playerInventory.get(i);
-                if(item instanceof RoomKey){ //Add another argument to check if its a exit key
-                    keyCount++;
-                }
-            }
-        if (keyCount == REQUIRED_EXIT_KEYS) {
-            return true;
-        }
-        return false;
-    }
+    // public boolean CheckWin(Room currentRoom, NPC guardian) {
+    //     if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
+    //         return false;
+    //     }
+    //     if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian")) {
+    //         return false;
+    //     }
+    //     List<Item> playerInventory = getInventory();
+    //     for (int i = playerInventory.size() - 1; i >= 0; i--) {
+    //         Item item = playerInventory.get(i);
+    //         if (item instanceof RoomKey) { // Add another argument to check if its a exit key
+    //             keyCount++;
+    //         }
+    //     }
+    //     if (keyCount == REQUIRED_EXIT_KEYS) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
 }

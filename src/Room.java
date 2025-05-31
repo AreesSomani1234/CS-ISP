@@ -8,19 +8,17 @@ public class Room {
     private Map<String, String> exits; // direction → roomId
     private List<Item> items;
     private NPC npc;
-    private RoomKey hasKey;    //makes sure room has a key in it
-    private boolean needsKey; // room needs key to go in
+    private boolean islocked; // room needs key to go in
 
 
-    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, NPC npc, boolean needsKey) {
+    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, NPC npc, boolean locked) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.exits = exits;
         this.items = items;
         this.npc = npc;
-        this.hasKey = hasKey;
-        this.needsKey = needsKey;
+        this.islocked = locked;
     }
 
     public String getId() {
