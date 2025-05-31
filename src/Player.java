@@ -108,6 +108,13 @@ public class Player {
         if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian")) {
             return false;
         }
+        List<Item> playerInventory = getInventory();
+        for (int i = playerInventory.size() - 1; i >= 0; i--) {
+                Item item = playerInventory.get(i);
+                if(item instanceof RoomKey){ //Add another argument to check if its a exit key
+                    keyCount++;
+                }
+            }
         if (keyCount == REQUIRED_EXIT_KEYS) {
             return true;
         }
