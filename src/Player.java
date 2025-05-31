@@ -52,6 +52,21 @@ public class Player {
         return keyCount;
     }
 
+    public boolean canEnter(Room room) {
+        if (!room.isLocked()) {
+            return true;
+        }
+        for (Item i : inventory) {
+            if (i instanceof RoomKey) {
+                RoomKey key = (RoomKey) i;
+                if (key.GetExitKeyNumber() == room.type()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public int inventoryWeight() { // -Arees-gets the weight of the inventory
         int weight = 0;
         List<Item> playerInventory = getInventory();
@@ -90,7 +105,7 @@ public class Player {
         this.currentRoomId = RoomId;
     }
 
-    public int playerExitKeyCount() { //return player exit key count-Arees
+    public int playerExitKeyCount() { // return player exit key count-Arees
         int exitKeyCount = 0;
         List<Item> Playerinventory = getInventory();
         for (Item i : Playerinventory) {
@@ -105,7 +120,7 @@ public class Player {
         return exitKeyCount;
     }
 
-    public int playerStClairKeyCheck() { //return player StClair key count-Arees
+    public int playerStClairKeyCheck() { // return player StClair key count-Arees
         int STCKeyCount = 0;
         List<Item> Playerinventory = getInventory();
         for (Item i : Playerinventory) {
@@ -120,7 +135,7 @@ public class Player {
         return STCKeyCount;
     }
 
-    public int playerQueenCheck() { //return player queen key count-Arees
+    public int playerQueenCheck() { // return player queen key count-Arees
         int QueenKeyCount = 0;
         List<Item> Playerinventory = getInventory();
         for (Item i : Playerinventory) {
@@ -143,22 +158,24 @@ public class Player {
     }
 
     // public boolean CheckWin(Room currentRoom, NPC guardian) {
-    //     if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
-    //         return false;
-    //     }
-    //     if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian")) {
-    //         return false;
-    //     }
-    //     List<Item> playerInventory = getInventory();
-    //     for (int i = playerInventory.size() - 1; i >= 0; i--) {
-    //         Item item = playerInventory.get(i);
-    //         if (item instanceof RoomKey) { // Add another argument to check if its a exit key
-    //             keyCount++;
-    //         }
-    //     }
-    //     if (keyCount == REQUIRED_EXIT_KEYS) {
-    //         return true;
-    //     }
-    //     return false;
+    // if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
+    // return false;
+    // }
+    // if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian"))
+    // {
+    // return false;
+    // }
+    // List<Item> playerInventory = getInventory();
+    // for (int i = playerInventory.size() - 1; i >= 0; i--) {
+    // Item item = playerInventory.get(i);
+    // if (item instanceof RoomKey) { // Add another argument to check if its a exit
+    // key
+    // keyCount++;
+    // }
+    // }
+    // if (keyCount == REQUIRED_EXIT_KEYS) {
+    // return true;
+    // }
+    // return false;
     // }
 }

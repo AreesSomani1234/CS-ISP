@@ -9,9 +9,10 @@ public class Room {
     private List<Item> items;
     private NPC npc;
     private boolean islocked; // room needs key to go in
+    private int type;
 
 
-    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, NPC npc, boolean locked) {
+    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, NPC npc, boolean locked, int type) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -19,10 +20,22 @@ public class Room {
         this.items = items;
         this.npc = npc;
         this.islocked = locked;
+        this.type = type;
     }
 
     public String getId() {
         return id;
+    }
+    public boolean isLocked(){
+        return islocked;
+    }
+    public int type(){
+        return type;
+    }
+    
+    public void setLocked(boolean locked, int type){
+        this.islocked = locked;
+        this.type = type;
     }
 
     public String getName() {

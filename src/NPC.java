@@ -60,7 +60,7 @@ public class NPC {
         return attackPower;
     }
     public void NPCAttack(Player player){
-        if((player.getCurrentRoomId().equals(getNPCRoomID())) && living && getNPCFriendly()) {
+        if((player.getCurrentRoomId().equals(getNPCRoomID())) && living && !getNPCFriendly()) {
             System.out.println("The " + getNPCname() + " is attacking you!" );
             player.playerHit(attackPower);
             System.out.println("You lost: " + getattackPower() + " health points");
