@@ -29,5 +29,29 @@ public class RoomKey extends Item{
     public boolean getexitKey3(){
         return keyType == EXIT_3;
     }
+    public int GetExitKeyNumber()
+    {
+        if(keyType == EXIT_1)
+        {
+            return 1;
+        }
+        else if(keyType == EXIT_2)
+        {
+            return 2;
+        }
+        else if(keyType == EXIT_3)
+        {
+            return 3;
+        }
+        else if(keyType == ST_CLAIR_ENTRANCE)
+        {
+            return 0;
+        }
+        else if(keyType == QUEEN)
+        {
+            return -1;
+        }
+        return -2;
+    }
 }
 
