@@ -28,15 +28,6 @@ public class Player {
         return currentRoomId;
     }
 
-    public void setCurrentRoomId(String roomId) {
-        this.currentRoomId = roomId;
-        if(currentRoomId.equals("DM Area2") || currentRoomId.equals("YM area 3") || currentRoomId.equals("BY Area 3"))
-        {
-            System.out.println("You got a key");
-            keyCount++;
-        }
-    }
-
     public void addItem(Item item) {
         inventory.add(item);
     }
@@ -52,8 +43,9 @@ public class Player {
     public void updatePlayerStrength(int val) {
         playerStrength += val;
     }
-    public void playerHit(int num){
-        playerHealth -= num; 
+
+    public void playerHit(int num) {
+        playerHealth -= num;
     }
 
     public int GetKeyCount() {
@@ -76,7 +68,7 @@ public class Player {
         if (inventoryWeight() > maxWeight) {
             for (int i = playerInventory.size() - 1; i >= 0; i--) {
                 Item item = playerInventory.get(i);
-                if(!(item instanceof RoomKey)){
+                if (!(item instanceof RoomKey)) {
                     playerInventory.remove(i);
                     break; // breaks the loop so that more than 1 item isnt removed
                 }
@@ -92,6 +84,14 @@ public class Player {
         }
 
         System.out.println("Your health is: " + playerHealth);
+    }
+
+    public void setCurrentRoomId(String RoomId) {
+        this.currentRoomId = RoomId;
+    }
+
+    {
+
     }
 
     public void PlayerAttack(NPC npc, Item item) {
