@@ -25,15 +25,7 @@ public class Game {
         System.out.println(currentRoom.getLongDescription());
         boolean gameOver = false;
         while (!gameOver) {
-            if(player.getPlayerHealth() <= 0){
-                System.out.println("YOU LOST!!!");
-                gameOver = true;
-            }
-            if(player.getCurrentRoomId().equals("U Area 2")){
-                System.out.println("YOU WIN!!!");
-                System.out.println("You completed: Stuck in the TTC");
-                gameOver = true;
-            }
+ 
             System.out.print("> ");
             String input = scanner.nextLine();
             commandParser.parse(input, player, rooms);

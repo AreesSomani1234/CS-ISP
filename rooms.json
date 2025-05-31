@@ -2,7 +2,7 @@
   "Finch Station": {
     "name": "Finch Station",
     "description": "You are starting at Finch station don't be scared to explore other stations aswell. Good luck!",
-    "roomID": "Finxh Station",
+    "roomID": "Finch Station",
     "exits": {
       "south": "Sheppard Yonge"
     },
