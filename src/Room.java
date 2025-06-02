@@ -9,7 +9,7 @@ public class Room {
     private List<Item> items;
     private NPC npc;
     private boolean islocked; // room needs key to go in
-    private int type;
+    private int type; //type of key needed
 
 
     public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, NPC npc, boolean locked, int type) {
@@ -26,14 +26,14 @@ public class Room {
     public String getId() {
         return id;
     }
-    public boolean isLocked(){
+    public boolean isLocked(){ //-Arees, checks if room isLocked
         return islocked;
     }
-    public int type(){
+    public int type(){ //-Arees, keytype for locked room
         return type;
     }
     
-    public void setLocked(boolean locked, int type){
+    public void setLocked(boolean locked, int type){ // setLocked method-Arees
         this.islocked = locked;
         this.type = type;
     }

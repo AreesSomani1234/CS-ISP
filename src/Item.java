@@ -15,11 +15,11 @@ public class Item {
         this.consumable = consumable;
         this.weapon = weapon;
         weight = 5;
-        if(consumable){
+        if(consumable){ //sets health boost for consumables
             strength = 0;
             health = 50;
         }
-        if(weapon){
+        if(weapon){ //sets strength for weapons
             strength = 100;
             health = 0; 
         }
@@ -28,7 +28,7 @@ public class Item {
             strength = 0;
         }
     }
-    public void useItem (Player player){
+    public void useItem (Player player){ //using item
         if(consumable){
             player.updatePlayerHealth(health);
         }

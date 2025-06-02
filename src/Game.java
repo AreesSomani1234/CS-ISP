@@ -26,14 +26,14 @@ public class Game {
         boolean gameOver = false;
         while (!gameOver) {
             Room currentRoomNow = rooms.get(player.getCurrentRoomId());
-            player.removeWeightExceededItem();
+            player.removeWeightExceededItem(); //-Arees, checks item weight constatly and removes last item if weight is exceeded.
             
             if(player.getPlayerHealth()<= 0){
-                System.out.println("You lost!, You died");
+                System.out.println("You lost!, You died"); //-Arees die if health=0
                 gameOver = true;
                 break;
             }
-            if (currentRoomNow.getId().equals("escape")) {
+            if (currentRoomNow.getId().equals("escape")) { // -Arees win if escape
                 System.out.println("You win! You completed Stuck in the TTC");
                 gameOver = true;
                 break;

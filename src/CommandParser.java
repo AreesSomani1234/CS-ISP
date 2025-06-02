@@ -196,15 +196,15 @@ public class CommandParser {
                 }
                 return false;
 
-            case "health": // gets health of player
+            case "health": // gets health of player -Arees
                 System.out.println("Your current Health is: " + player.getPlayerHealth());
                 return false;
 
-            case "strength": // gets strength of player
+            case "strength": // gets strength of player -Arees
                 System.out.println("Your current strength is: " + player.getPlayerStrength());
                 return false;
                 
-            case "weight":
+            case "weight": //gets inventory weight -Arees
                 System.out.println("You inventory weight is: " + player.inventoryWeight());
                 return false;
 

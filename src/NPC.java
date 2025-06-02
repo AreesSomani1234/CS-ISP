@@ -59,7 +59,7 @@ public class NPC {
     public int getattackPower(){
         return attackPower;
     }
-    public void NPCAttack(Player player){
+    public void NPCAttack(Player player){ //-Arees, NPC attacks player if in the same room as eachother
         if((player.getCurrentRoomId().equals(getNPCRoomID())) && living && !getNPCFriendly()) {
             System.out.println("The " + getNPCname() + " is attacking you!" );
             player.playerHit(attackPower);
@@ -67,7 +67,7 @@ public class NPC {
             System.out.println("Your current health is: " + player.getPlayerHealth());
         }
     }
-    public void NPCDeath(){
+    public void NPCDeath(){ //NPC death command
         living = false;
         room.setNPC(null);
         System.out.println(getNPCname() + " is dead!");

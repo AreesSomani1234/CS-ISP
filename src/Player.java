@@ -43,11 +43,11 @@ public class Player {
         return inventory;
     }
 
-    public void updatePlayerStrength(int val) {
+    public void updatePlayerStrength(int val) { 
         playerStrength += val;
     }
 
-    public void playerHit(int num) {
+    public void playerHit(int num) { //- Player gets hit
         playerHealth -= num;
     }
 
@@ -55,7 +55,7 @@ public class Player {
         return keyCount;
     }
 
-    public boolean canEnter(Room room) {
+    public boolean canEnter(Room room) { // -Arees, checks if you can eneter a room,-> right keys
         if (!room.isLocked()) {
             return true;
         }
@@ -80,8 +80,7 @@ public class Player {
 
     }
 
-    public void removeWeightExceededItem() { // if inventory has to much weight removes last item piked up./ need to implent
-                                        // choose which items to drop
+    public void removeWeightExceededItem() { // -Arees, if inventory has to much weight removes last item piked up.
         List<Item> playerInventory = getInventory();
         if (inventoryWeight() > maxWeight) {
             for (int i = playerInventory.size() - 1; i >= 0; i--) {
@@ -155,34 +154,34 @@ public class Player {
         return QueenKeyCount;
     }
 
-    public void PlayerAttack(NPC npc, Item item) {
+    public void PlayerAttack(NPC npc, Item item) { //-Arees, allows player to attack NPC if they got weapon
         if (playerStrength > 0) {
             System.out.println("you are attacking the " + npc.getNPCname() + " with your weapon");
             npc.NPCDeath();
         }
     }
 
-    public boolean CheckWin(Room currentRoom, NPC guardian) {
-        if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
-            return false;
-        }
-        if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian")) {
-            return false;
-        }
-        List<Item> playerInventory = getInventory();
-        for (int i = playerInventory.size() - 1; i >= 0; i--) {
-                Item item = playerInventory.get(i);
-                if(item instanceof RoomKey){
-                    RoomKey rk = (RoomKey) item; // downcast to access child methods
-                    int keyNum = rk.GetExitKeyNumber();
-                    if (keyNum == 1 || keyNum == 2 || keyNum == 3){
-                        keyCount++;
-                    }
-                }
-            }
-        if (keyCount == REQUIRED_EXIT_KEYS) {
-            return true;
-        }
-        return false;
-    }
+    // public boolean CheckWin(Room currentRoom, NPC guardian) {
+    //     if (!currentRoom.getId().equalsIgnoreCase(ESCAPE_ROOM_ID)) {
+    //         return false;
+    //     }
+    //     if (guardian == null || !guardian.getNPCname().equalsIgnoreCase("guardian")) {
+    //         return false;
+    //     }
+    //     List<Item> playerInventory = getInventory();
+    //     for (int i = playerInventory.size() - 1; i >= 0; i--) {
+    //             Item item = playerInventory.get(i);
+    //             if(item instanceof RoomKey){
+    //                 RoomKey rk = (RoomKey) item; // downcast to access child methods
+    //                 int keyNum = rk.GetExitKeyNumber();
+    //                 if (keyNum == 1 || keyNum == 2 || keyNum == 3){
+    //                     keyCount++;
+    //                 }
+    //             }
+    //         }
+    //     if (keyCount == REQUIRED_EXIT_KEYS) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
 }
