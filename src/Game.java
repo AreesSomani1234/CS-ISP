@@ -26,9 +26,10 @@ public class Game {
         boolean gameOver = false;
         while (!gameOver) {
             Room currentRoomNow = rooms.get(player.getCurrentRoomId());
+            player.removeWeightExceededItem();
             
             if(player.getPlayerHealth()<= 0){
-                System.out.println("You lost!, Your died");
+                System.out.println("You lost!, You died");
                 gameOver = true;
                 break;
             }

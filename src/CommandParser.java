@@ -129,7 +129,7 @@ public class CommandParser {
                 return false;
             case "help":
                 System.out
-                        .println("Available commands: go [direction], look, take [item], drop [item], inventory, help");
+                        .println("Available commands: go [direction], look, take [item], drop [item], inventory, help, quit, use, attack, health, strength, weight");
                 return false;
             case "quit":
                 System.out.println("good game");
@@ -202,6 +202,10 @@ public class CommandParser {
 
             case "strength": // gets strength of player
                 System.out.println("Your current strength is: " + player.getPlayerStrength());
+                return false;
+                
+            case "weight":
+                System.out.println("You inventory weight is: " + player.inventoryWeight());
                 return false;
 
             default:

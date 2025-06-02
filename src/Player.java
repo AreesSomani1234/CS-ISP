@@ -8,7 +8,7 @@ public class Player {
     private int playerStrength;
     private int keyCount;
     private final int playerMaxHealth = 100;
-    private final int maxWeight = 40;
+    private final int maxWeight = 30;
 
     private static final String ESCAPE_ROOM_ID = "escape";
     private static final int REQUIRED_EXIT_KEYS = 3;
@@ -80,7 +80,7 @@ public class Player {
 
     }
 
-    public void removeInventoryItem() { // if inventory has to much weight removes last item piked up./ need to implent
+    public void removeWeightExceededItem() { // if inventory has to much weight removes last item piked up./ need to implent
                                         // choose which items to drop
         List<Item> playerInventory = getInventory();
         if (inventoryWeight() > maxWeight) {
@@ -88,6 +88,8 @@ public class Player {
                 Item item = playerInventory.get(i);
                 if (!(item instanceof RoomKey)) {
                     playerInventory.remove(i);
+                    System.out.println("Weight exceeded! " + item.getName() + " was removed from your inventory.");
+                    System.out.println("drop item to make room for new item.");
                     break; // breaks the loop so that more than 1 item isnt removed
                 }
             }
