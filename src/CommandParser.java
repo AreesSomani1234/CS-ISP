@@ -99,6 +99,7 @@ public class CommandParser {
                     if (itemToTake != null) {
                         room.removeItem(itemToTake);
                         player.addItem(itemToTake);
+                        player.addPlayerPoints(itemToTake.getPointsGiven());
                         System.out.println("You take the " + itemToTake.getName() + ".");
                     } else {
                         System.out.println("There is no " + itemName + " here.");
@@ -129,7 +130,7 @@ public class CommandParser {
                 return false;
             case "help":
                 System.out
-                        .println("Available commands: go [direction], look, take [item], drop [item], inventory, help, quit, use, attack, health, strength, weight");
+                        .println("Available commands: go [direction], look, take [item], drop [item], inventory, help, quit, use, attack, health, strength, weight, points");
                 return false;
             case "quit":
                 System.out.println("good game");
@@ -206,6 +207,9 @@ public class CommandParser {
                 
             case "weight": //gets inventory weight -Arees
                 System.out.println("You inventory weight is: " + player.inventoryWeight());
+                return false;
+            case "points": //gets Player points -Arees
+                System.out.println("You have : " + player.getPlayerPoints() + " points right now");
                 return false;
 
             default:

@@ -7,6 +7,7 @@ public class Item {
     private int health;
     private int strength;
     private int weight;
+    private int pointsGiven;
 
     public Item(String id, String name, String description, boolean consumable, boolean weapon) {
         this.id = id;
@@ -18,14 +19,17 @@ public class Item {
         if(consumable){ //sets health boost for consumables
             strength = 0;
             health = 50;
+            this.pointsGiven = 20;
         }
         if(weapon){ //sets strength for weapons
             strength = 100;
             health = 0; 
+            this.pointsGiven = 20;
         }
         if(!weapon && !consumable){
             health = 0;
             strength = 0;
+            this.pointsGiven = 35;
         }
     }
     public void useItem (Player player){ //using item
@@ -39,6 +43,9 @@ public class Item {
 
     public boolean getConsumable(){
         return consumable;
+    }
+    public int getPointsGiven(){
+        return pointsGiven;
     }
     public boolean getWeapon(){
         return weapon;

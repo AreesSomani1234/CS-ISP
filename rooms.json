@@ -55,15 +55,13 @@
       "west": "SY Area1",
       "east": "Bayview"
     },
-    "NPC": 
-      {
-        "name": "Grubber",
-        "description": "A skittish, mutated scavenger obsessed with shiny objects and wires. Its unfriendly and attacks by leaping and biting if cornered.",
-        "friendly": false,
-        "size": "Small"
-      }
-    ,
-    "items":[]
+    "NPC": {
+      "name": "Grubber",
+      "description": "A skittish, mutated scavenger obsessed with shiny objects and wires. Its unfriendly and attacks by leaping and biting if cornered.",
+      "friendly": false,
+      "size": "Small"
+    },
+    "items": []
   },
   "SY Area3": {
     "name": "Sheppard Yonge Area 3",
@@ -123,14 +121,12 @@
       "south": "Don Mills",
       "west": "DM Area2"
     },
-    "NPC": 
-      {
-        "name": "Rattle_Back",
-        "description": "A deranged maintenance mech fused with wreckage and corrupted code, now guarding its key like it's sacred. Unfriendly and aggressive, it slams the ground to trigger shockwaves and charges intruders.",
-        "friendly": false,
-        "size": "Big"
-      }
-    ,
+    "NPC": {
+      "name": "Rattle_Back",
+      "description": "A deranged maintenance mech fused with wreckage and corrupted code, now guarding its key like it's sacred. Unfriendly and aggressive, it slams the ground to trigger shockwaves and charges intruders.",
+      "friendly": false,
+      "size": "Big"
+    },
     "items": []
   },
   "DM Area2": {
@@ -204,11 +200,17 @@
     "name": "York Mills Area 2",
     "locked": false,
     "keytype": -1,
-    "description": "You are at York Mills Area2. There are no NPC's and no items",
+    "description": "You are at York Mills Area2. There are is a dangerous Homeless man and no items",
     "roomID": "YM Area2",
     "exits": {
       "east": "YM Area1",
       "west": "YM Area3"
+    },
+    "NPC": {
+      "name": "Homeless_Man",
+      "description": ": An old Homeless_Man that feast on the unexpected.",
+      "friendly": false,
+      "size": "Medium"
     },
     "items": []
   },
@@ -302,14 +304,12 @@
       "east": "L Area3",
       "west": "Lawrence"
     },
-    "NPC": 
-      {
-        "name": "Whisperer",
-        "description": ": A cloaked being that speaks only in your own voice, revealing your worst fears. Unfriendly and uses psychic weapons that disorient and drain health.",
-        "friendly": false,
-        "size": "Big"
-      }
-    ,
+    "NPC": {
+      "name": "Whisperer",
+      "description": ": A cloaked being that speaks only in your own voice, revealing your worst fears. Unfriendly and uses psychic weapons that disorient and drain health.",
+      "friendly": false,
+      "size": "Big"
+    },
     "items": []
   },
   "L Area3": {
@@ -349,7 +349,7 @@
     "name": "St Clair",
     "locked": true,
     "keytype": 0,
-    "description": "You are now 9at St Clair Station. You can now head south to Bloor Yonge",
+    "description": "You are now at St Clair Station. You can now head south to Bloor Yonge",
     "roomID": "St Clair",
     "exits": {
       "south": "Bloor Yonge",
@@ -415,13 +415,12 @@
       "south": "BY Area04"
     },
     "items": [],
-    "NPC": 
-      {
-        "name": "Spindle",
-        "description": "An intelligent repair drone turned reclusive inventor, building silk-wire webs through the tunnels. Friendly and will restore your health if you complete a task.",
-        "friendly": true,
-        "size": "Medium"
-      }
+    "NPC": {
+      "name": "Spindle",
+      "description": "An intelligent repair drone turned reclusive inventor, building silk-wire webs through the tunnels. Friendly and will restore your health if you complete a task.",
+      "friendly": true,
+      "size": "Medium"
+    }
   },
   "BY Area04": {
     "name": "Bloor Yonge area 04",
@@ -456,13 +455,12 @@
       "west": "BY Area1",
       "south": "BY Area3"
     },
-    "NPC": 
-      {
-        "name": "Trackwalk",
-        "description": "A spectral figure doomed to walk its patrol forever after a failed rescue mission. It’s unfriendly and violently attacks with electrified limbs if anyone blocks its route or approaches the key.",
-        "friendly": false,
-        "size": "Medium"
-      },
+    "NPC": {
+      "name": "Trackwalk",
+      "description": "A spectral figure doomed to walk its patrol forever after a failed rescue mission. It’s unfriendly and violently attacks with electrified limbs if anyone blocks its route or approaches the key.",
+      "friendly": false,
+      "size": "Medium"
+    },
     "items": []
   },
   "BY Area3": {
@@ -474,7 +472,8 @@
     "exits": {
       "north": "BY Area2"
     },
-    "items": [{
+    "items": [
+      {
         "id": "Key3",
         "name": "Key3",
         "description": "Will randomize that potion that you can acquire",
@@ -482,7 +481,8 @@
         "weapon": false,
         "isKey": true,
         "keyType": 4
-      }]
+      }
+    ]
   },
   "Dundas": {
     "name": "Dundas",
@@ -531,13 +531,12 @@
       "east": "D Area4",
       "west": "D Area2"
     },
-    "NPC": 
-      {
-        "name": "Fireless_Prophet",
-        "description": "A Fireless_Prophet scorched zealot of the old flame, now preaching cold salvation beneath flickering lights. Unfriendly and casts sparks of static energy through his sword when interrupted.",
-        "friendly": false,
-        "size": "Small"
-      },
+    "NPC": {
+      "name": "Fireless_Prophet",
+      "description": "A Fireless_Prophet scorched zealot of the old flame, now preaching cold salvation beneath flickering lights. Unfriendly and casts sparks of static energy through his sword when interrupted.",
+      "friendly": false,
+      "size": "Small"
+    },
     "items": []
   },
   "D Area4": {
@@ -617,16 +616,15 @@
       "east": "escape",
       "west": "D Area1"
     },
-    "NPC": 
-      {
-        "name": "Guardian",
-        "description": "A towering sentinel powered by forgotten cores, awaiting the chosen bearer of the three subway keys. Friendly unless threatened, it opens the escape only to those who prove themselves",
-        "friendly": true,
-        "size": "big"
-      },
+    "NPC": {
+      "name": "Guardian",
+      "description": "A towering sentinel powered by forgotten cores, awaiting the chosen bearer of the three subway keys. Friendly unless threatened, it opens the escape only to those who prove themselves",
+      "friendly": false,
+      "size": "big"
+    },
     "items": []
   },
-    "escape": {
+  "escape": {
     "name": "escape",
     "locked": true,
     "keytype": 5,

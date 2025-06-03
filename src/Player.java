@@ -9,6 +9,8 @@ public class Player {
     private int keyCount;
     private final int playerMaxHealth = 100;
     private final int maxWeight = 30;
+    private int playerPoints;
+
 
     private static final String ESCAPE_ROOM_ID = "escape";
     private static final int REQUIRED_EXIT_KEYS = 3;
@@ -18,6 +20,7 @@ public class Player {
         this.inventory = new ArrayList<>();
         this.playerHealth = 100;
         this.playerStrength = 0;
+        this.playerPoints = 0;
     }
 
     public int getPlayerHealth() {
@@ -25,6 +28,12 @@ public class Player {
     }
     public int getPlayerStrength(){
         return playerStrength;
+    }
+    public int getPlayerPoints(){
+        return playerPoints;
+    }
+    public void addPlayerPoints(int points){ // adds player points
+        playerPoints += points;
     }
 
     public String getCurrentRoomId() {
@@ -83,6 +92,7 @@ public class Player {
     public void removeWeightExceededItem() { // -Arees, if inventory has to much weight removes last item piked up.
         List<Item> playerInventory = getInventory();
         if (inventoryWeight() > maxWeight) {
+            addPlayerPoints(-20); //-Arees if weight exceeded player loses 30 points
             for (int i = playerInventory.size() - 1; i >= 0; i--) {
                 Item item = playerInventory.get(i);
                 if (!(item instanceof RoomKey)) {
@@ -157,6 +167,7 @@ public class Player {
     public void PlayerAttack(NPC npc, Item item) { //-Arees, allows player to attack NPC if they got weapon
         if (playerStrength > 0) {
             System.out.println("you are attacking the " + npc.getNPCname() + " with your weapon");
+            addPlayerPoints(npc.getPointsGiven());
             npc.NPCDeath();
         }
     }
